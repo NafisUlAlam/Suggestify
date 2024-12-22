@@ -13,7 +13,7 @@ const AddQueries = () => {
   }, []);
   const handleAdd = (e) => {
     e.preventDefault();
-    console.log(user.photoURL);
+    //console.log(user.photoURL);
     const itemName = e.target.name.value;
     const itemBrand = e.target.brand.value;
     const itemPhoto = e.target.photo.value;
@@ -38,7 +38,7 @@ const AddQueries = () => {
       timeOfPost,
       recommendationCount,
     };
-    console.log(myQuery);
+    //console.log(myQuery);
     e.target.reset();
     fetch("http://localhost:5000/queries", {
       method: "POST",
@@ -49,7 +49,7 @@ const AddQueries = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        //console.log(data);
         if (data.insertedId) {
           toast.success("Successfully added the query!", {
             position: "top-center",

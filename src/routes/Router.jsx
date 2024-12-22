@@ -101,10 +101,7 @@ const router = createBrowserRouter([
             <UpdateQuery></UpdateQuery>
           </PrivateRoute>
         ),
-        loader: (e) =>
-          fetch(
-            `https://assignment-10-server-nu-six.vercel.app/equipments/${e.params.id}`
-          ),
+        loader: (e) => fetch(`http://localhost:5000/queries/${e.params.id}`),
       },
     ],
   },

@@ -60,8 +60,8 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
             className="rounded-xl h-[200px] object-contain"
           />
         </figure>
-        <div className="card-body ">
-          <div className="flex items-center gap-2">
+        <div className="card-body">
+          <div className="flex items-center justify-between gap-2">
             <img
               src={originalPosterImg}
               className="size-8 rounded-full"
@@ -74,20 +74,24 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
             <p className=" rounded-full">{timeOfPost.split("T")[0]}</p>
           </div>
           <h2 className=" text-center font-bold md:text-xl">{queryTitle}</h2>
-          <div className="flex ">
+          <div className="flex justify-between">
+            <p className="font-bold">{itemName}</p>
             <p className="font-semibold">{itemBrand}</p>
           </div>
-          <p className=" rounded-full">{itemName}</p>
+
           <p className=" rounded-full">{boycottReasons.slice(0, 30)}...</p>
           <p>Recommendations: {recommendationCount}</p>
         </div>
         <div className="card-actions pb-8 justify-center">
-          <button className="btn btn-primary" onClick={() => handleDelete(_id)}>
-            Delete
-          </button>
+          <Link to={`/detailquery/${_id}`}>
+            <button className="btn btn-primary">Details</button>
+          </Link>
           <Link to={`/updatequery/${_id}`}>
             <button className="btn btn-primary">Update</button>
           </Link>
+          <button className="btn btn-primary" onClick={() => handleDelete(_id)}>
+            Delete
+          </button>
         </div>
       </div>
     </Slide>
