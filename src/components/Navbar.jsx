@@ -3,7 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { toast } from "react-toastify";
-import Theme from "./Theme";
+// import Theme from "./Theme";
 const Navbar = () => {
   const { user, logOut, loading } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -160,9 +160,7 @@ const Navbar = () => {
             </NavLink>
           </div>
         )}
-        <div className="ml-4">
-          <Theme></Theme>
-        </div>
+        <div className="ml-4">{/* <Theme></Theme> */}</div>
       </div>
     </div>
   );

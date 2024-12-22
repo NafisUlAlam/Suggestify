@@ -12,9 +12,7 @@ dist
 dist-ssr
 *.local
 
-src/components/*
-!src/components/Navbar.jsx
-!src/components/Error.jsx
+
 
 # Editor directories and files
 .vscode/*
