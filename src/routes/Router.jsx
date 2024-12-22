@@ -4,14 +4,17 @@ import Register from "../components/Register";
 import Error from "../components/Error";
 import Home from "../components/Home";
 // import ForgotPass from "../components/ForgotPass";
-// import Main from "../components/Main";
-// import PrivateRoute from "./PrivateRoute";
+import Main from "../components/Main";
+import PrivateRoute from "./PrivateRoute";
 // import AddEquipments from "./../components/AddEquipments";
 // import AllEquipments from "../components/AllEquipments";
 // import DetailedEquipmentCard from "../components/DetailedEquipmentCard";
 // import MyEquipments from "./../components/MyEquipments";
 // import UpdateEquipments from "./../components/UpdateEquipments";
 // import AllProducts from "../components/AllProducts";
+import MyQueries from "./../components/MyQueries";
+import AddQueries from "./../components/AddQueries";
+import UpdateQuery from "../components/UpdateQuery";
 
 const router = createBrowserRouter([
   {
@@ -19,29 +22,29 @@ const router = createBrowserRouter([
     errorElement: <Error></Error>,
     element: <Home></Home>,
     children: [
-      //   {
-      //     path: "/",
-      //     element: <Main></Main>,
+      {
+        path: "/",
+        element: <Main></Main>,
 
-      //     children: [
-      //       {
-      //         path: "/",
-      //         element: <AllProducts></AllProducts>,
-      //       },
-      //       {
-      //         path: "/allproducts",
-      //         element: <AllProducts></AllProducts>,
-      //       },
-      //       {
-      //         path: "/sports",
-      //         element: <AllProducts></AllProducts>,
-      //       },
-      //       {
-      //         path: "/fitness",
-      //         element: <AllProducts></AllProducts>,
-      //       },
-      //     ],
-      //   },
+        //     children: [
+        //       {
+        //         path: "/",
+        //         element: <AllProducts></AllProducts>,
+        //       },
+        //       {
+        //         path: "/allproducts",
+        //         element: <AllProducts></AllProducts>,
+        //       },
+        //       {
+        //         path: "/sports",
+        //         element: <AllProducts></AllProducts>,
+        //       },
+        //       {
+        //         path: "/fitness",
+        //         element: <AllProducts></AllProducts>,
+        //       },
+        //     ],
+      },
       //   {
       //     path: "/allequipments",
       //     element: <AllEquipments></AllEquipments>,
@@ -62,22 +65,23 @@ const router = createBrowserRouter([
       //     path: "/forgotpassword",
       //     element: <ForgotPass></ForgotPass>,
       //   },
-      //   {
-      //     path: "/addequipments",
-      //     element: (
-      //       <PrivateRoute>
-      //         <AddEquipments></AddEquipments>
-      //       </PrivateRoute>
-      //     ),
-      //   },
-      //   {
-      //     path: "/myequipments",
-      //     element: (
-      //       <PrivateRoute>
-      //         <MyEquipments></MyEquipments>
-      //       </PrivateRoute>
-      //     ),
-      //   },
+
+      {
+        path: "/myqueries",
+        element: (
+          <PrivateRoute>
+            <MyQueries></MyQueries>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/addqueries",
+        element: (
+          <PrivateRoute>
+            <AddQueries></AddQueries>
+          </PrivateRoute>
+        ),
+      },
       //   {
       //     path: `/equipments/:id`,
       //     element: (
@@ -90,18 +94,18 @@ const router = createBrowserRouter([
       //         `https://assignment-10-server-nu-six.vercel.app/equipments/${e.params.id}`
       //       ),
       //   },
-      //   {
-      //     path: `/update/:id`,
-      //     element: (
-      //       <PrivateRoute>
-      //         <UpdateEquipments></UpdateEquipments>
-      //       </PrivateRoute>
-      //     ),
-      //     loader: (e) =>
-      //       fetch(
-      //         `https://assignment-10-server-nu-six.vercel.app/equipments/${e.params.id}`
-      //       ),
-      //   },
+      {
+        path: `/updatequery/:id`,
+        element: (
+          <PrivateRoute>
+            <UpdateQuery></UpdateQuery>
+          </PrivateRoute>
+        ),
+        loader: (e) =>
+          fetch(
+            `https://assignment-10-server-nu-six.vercel.app/equipments/${e.params.id}`
+          ),
+      },
     ],
   },
 ]);
