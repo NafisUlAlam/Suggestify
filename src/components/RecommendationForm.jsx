@@ -5,14 +5,8 @@ import PropTypes from "prop-types";
 
 const RecommendationForm = ({ query }) => {
   const { user } = useContext(AuthContext);
-  const {
-    itemName,
-    queryTitle,
-    originalPoster,
-    originalPosterEmail,
-
-    _id,
-  } = query;
+  const { itemName, queryTitle, originalPoster, originalPosterEmail, _id } =
+    query;
   const handleAddRecommendation = (e) => {
     e.preventDefault();
     //console.log(user.photoURL);
