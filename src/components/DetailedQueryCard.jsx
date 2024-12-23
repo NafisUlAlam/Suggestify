@@ -12,7 +12,6 @@ const DetailedQueryCard = ({ query }) => {
     recommendationCount,
     originalPosterImg,
     timeOfPost,
-    _id,
   } = query;
 
   const relativeTime = formatDistanceToNow(new Date(timeOfPost), {
