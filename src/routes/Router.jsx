@@ -15,6 +15,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyQueries from "./../components/MyQueries";
 import AddQueries from "./../components/AddQueries";
 import UpdateQuery from "../components/UpdateQuery";
+import DetailedQueryPage from "../components/DetailedQueryPage";
 
 const router = createBrowserRouter([
   {
@@ -82,18 +83,15 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      //   {
-      //     path: `/equipments/:id`,
-      //     element: (
-      //       <PrivateRoute>
-      //         <DetailedEquipmentCard></DetailedEquipmentCard>
-      //       </PrivateRoute>
-      //     ),
-      //     loader: (e) =>
-      //       fetch(
-      //         `https://assignment-10-server-nu-six.vercel.app/equipments/${e.params.id}`
-      //       ),
-      //   },
+      {
+        path: `/detailquery/:id`,
+        element: (
+          <PrivateRoute>
+            <DetailedQueryPage></DetailedQueryPage>
+          </PrivateRoute>
+        ),
+        loader: (e) => fetch(`http://localhost:5000/queries/${e.params.id}`),
+      },
       {
         path: `/updatequery/:id`,
         element: (
