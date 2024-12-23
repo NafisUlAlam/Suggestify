@@ -18,6 +18,7 @@ import UpdateQuery from "../components/UpdateQuery";
 import DetailedQueryPage from "../components/DetailedQueryPage";
 import MyRecommendations from "./../components/MyRecommendations";
 import RecommendationsForMe from "../components/RecommendationsForMe";
+import AllQueries from "../components/AllQueries";
 
 const router = createBrowserRouter([
   {
@@ -48,12 +49,12 @@ const router = createBrowserRouter([
         //       },
         //     ],
       },
-      //   {
-      //     path: "/allequipments",
-      //     element: <AllEquipments></AllEquipments>,
-      //     loader: () =>
-      //       fetch("https://assignment-10-server-nu-six.vercel.app/equipments"),
-      //   },
+      {
+        path: "/allqueries",
+        element: <AllQueries></AllQueries>,
+        loader: () =>
+          fetch("https://assignment-10-server-nu-six.vercel.app/equipments"),
+      },
 
       {
         path: "/register",

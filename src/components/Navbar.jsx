@@ -25,7 +25,7 @@ const Navbar = () => {
 
       <button className="btn">
         <NavLink
-          to="/allequipments"
+          to="/allqueries"
           className={({ isActive }) => (isActive ? "text-red-400 " : "")}
         >
           Queries
