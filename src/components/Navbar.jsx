@@ -47,7 +47,7 @@ const Navbar = () => {
         <>
           <button className="btn">
             <NavLink
-              to="/addequipments"
+              to="/recommendationsforme"
               className={({ isActive }) => (isActive ? "text-red-400" : "")}
             >
               Recommendations For Me
