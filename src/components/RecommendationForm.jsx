@@ -39,8 +39,8 @@ const RecommendationForm = ({ query }) => {
 
       query_id: _id,
     };
-    console.log(myRecommendation);
-    //e.target.reset();
+    //console.log(myRecommendation);
+    e.target.reset();
     fetch("http://localhost:5000/recommendations", {
       method: "POST",
       headers: {

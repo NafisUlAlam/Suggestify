@@ -16,6 +16,7 @@ import MyQueries from "./../components/MyQueries";
 import AddQueries from "./../components/AddQueries";
 import UpdateQuery from "../components/UpdateQuery";
 import DetailedQueryPage from "../components/DetailedQueryPage";
+import MyRecommendations from "./../components/MyRecommendations";
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyQueries></MyQueries>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/myrecommendations",
+        element: (
+          <PrivateRoute>
+            <MyRecommendations></MyRecommendations>
           </PrivateRoute>
         ),
       },
