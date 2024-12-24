@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
+import { formatDistance } from "date-fns";
 const QueryCard = ({ query }) => {
   const {
     itemName,
@@ -14,6 +14,7 @@ const QueryCard = ({ query }) => {
     timeOfPost,
     _id,
   } = query;
+  const result = formatDistance(new Date(), timeOfPost);
   return (
     <div className="card w-full bg-base-100 shadow-md border">
       <div className="flex items-center p-4">
@@ -24,7 +25,7 @@ const QueryCard = ({ query }) => {
         />
         <div>
           <h2 className="font-semibold text-lg ">{originalPoster}</h2>
-          <p className="text-sm ">Posted {timeOfPost}</p>
+          <p className="text-sm ">Posted {result} ago</p>
         </div>
       </div>
 

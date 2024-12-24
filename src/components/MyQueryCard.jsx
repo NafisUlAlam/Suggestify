@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { Slide } from "react-awesome-reveal";
+import { formatDistance } from "date-fns";
 
 const MyQueryCard = ({ query, queries, setQueries }) => {
   const {
@@ -50,6 +51,7 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
       }
     });
   };
+  const result = formatDistance(new Date(), timeOfPost);
   return (
     <Slide>
       <div className="card bg-base-100  shadow-xl">
@@ -61,7 +63,7 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
           />
         </figure>
         <div className="card-body">
-          <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
             <img
               src={originalPosterImg}
               className="size-8 rounded-full"
@@ -71,7 +73,9 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
               <p className="font-semibold">{originalPoster}</p>
               <p className="font-semibold opacity-60">{originalPosterEmail}</p>
             </div>
-            <p className=" rounded-full">{timeOfPost.split("T")[0]}</p>
+            <div className="flex-1 text-right opacity-60">
+              <p className=" rounded-full">{result} ago</p>
+            </div>
           </div>
           <h2 className=" text-center font-bold md:text-xl">{queryTitle}</h2>
           <div className="flex justify-between">
