@@ -55,14 +55,14 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
   return (
     <Slide>
       <div className="card bg-base-100  shadow-xl">
-        <figure className="px-10 pt-10 h-[200px]">
+        <figure className="px-10 pt-10 ">
           <img
             src={photo}
             alt={itemName}
             className="rounded-xl h-[200px] object-contain"
           />
         </figure>
-        <div className="card-body">
+        <div className="space-y-4 px-8">
           <div className="flex items-center gap-2">
             <img
               src={originalPosterImg}
@@ -71,22 +71,32 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
             />
             <div>
               <p className="font-semibold">{originalPoster}</p>
-              <p className="font-semibold opacity-60">{originalPosterEmail}</p>
+              <p className="font-semibold opacity-60">
+                {originalPosterEmail.split("@")[0]}
+              </p>
             </div>
             <div className="flex-1 text-right opacity-60">
               <p className=" rounded-full">{result} ago</p>
             </div>
           </div>
           <h2 className=" text-center font-bold md:text-xl">{queryTitle}</h2>
-          <div className="flex justify-between">
-            <p className="font-bold">{itemName}</p>
-            <p className="font-semibold">{itemBrand}</p>
+          <div className="text-center">
+            <p className="font-light my-4">{itemName}</p>
+            <p className="font-thin badge badge-ghost">{itemBrand}</p>
           </div>
 
-          <p className=" rounded-full">{boycottReasons.slice(0, 30)}...</p>
-          <p>Recommendations: {recommendationCount}</p>
+          <p className="my-4">{boycottReasons.slice(0, 30)}...</p>
+          <p
+            className={`outline rounded-full text-center ${
+              recommendationCount > 0
+                ? "bg-green-50 text-green-400"
+                : "bg-red-50 text-red-400"
+            }`}
+          >
+            Recommendations: {recommendationCount}
+          </p>
         </div>
-        <div className="card-actions pb-8 justify-center">
+        <div className="card-actions pb-8 justify-center mt-6">
           <Link to={`/detailquery/${_id}`}>
             <button className="btn btn-primary">Details</button>
           </Link>
