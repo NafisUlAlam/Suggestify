@@ -1,18 +1,25 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { toast } from "react-toastify";
-import axios from "axios";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const RecommendationsForMe = () => {
   const { user } = useContext(AuthContext);
   const [recommendations, setRecommendations] = useState([]);
+  const axiosInstance = useAxiosSecure();
   //console.log(recommendations);
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:5000/recommendationsforme?email=${user.email}`)
+  //     .then((res) => setRecommendations(res.data))
+  //     .catch((err) => toast.error(err));
+  // }, [user.email]);
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/recommendationsforme?email=${user.email}`)
+    axiosInstance
+      .get(`recommendationsforme?email=${user.email}`)
       .then((res) => setRecommendations(res.data))
       .catch((err) => toast.error(err));
-  }, [user.email]);
+  }, [user.email, axiosInstance]);
   //console.log(recommendations);
   if (recommendations.length === 0) {
     return <p>No recommendations for your queries yet.</p>;
