@@ -6,8 +6,10 @@ import MyQueryCard from "./MyQueryCard";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import TitleAndSubTitle from "./TitleAndSubTitle";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 const MyQueries = () => {
+  useDocumentTitle("My Queries|Suggestify");
   const { user } = useContext(AuthContext);
   const [queries, setQueries] = useState([]);
 

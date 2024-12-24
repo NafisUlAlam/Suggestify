@@ -8,6 +8,7 @@ const AddQueries = () => {
   //console.log(user.photoURL);
   useDocumentTitle(`Add Query|Suggestify`);
   const inputRef = useRef();
+  useDocumentTitle("Add Query|Suggestify");
   useEffect(() => {
     inputRef.current.focus();
   }, []);

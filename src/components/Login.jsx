@@ -13,7 +13,7 @@ const Login = () => {
   const location = useLocation();
 
   //console.log(location);
-  useDocumentTitle(`${location.pathname.split("/")[1]}|Suggestify`);
+  useDocumentTitle(`Login|Suggestify`);
   //console.log(loading);
   //console.log(location);
   //on render complete, email is focused

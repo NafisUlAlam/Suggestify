@@ -3,10 +3,11 @@ import { useLoaderData } from "react-router-dom";
 import RecommendationForm from "./RecommendationForm";
 import RecommendationsList from "./RecommendationsList";
 import TitleAndSubTitle from "./TitleAndSubTitle";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 const DetailedQueryPage = () => {
   const query = useLoaderData();
-
+  useDocumentTitle("Query Detail|Suggestify");
   return (
     <div>
       <TitleAndSubTitle

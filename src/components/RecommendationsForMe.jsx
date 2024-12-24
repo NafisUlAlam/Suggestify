@@ -3,8 +3,10 @@ import { AuthContext } from "../contexts/AuthContext";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import TitleAndSubTitle from "./TitleAndSubTitle";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 const RecommendationsForMe = () => {
+  useDocumentTitle("Recommendations For Me|Suggestify");
   const { user } = useContext(AuthContext);
   const [recommendations, setRecommendations] = useState([]);
   const axiosInstance = useAxiosSecure();

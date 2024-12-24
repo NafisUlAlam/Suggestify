@@ -2,8 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import QueryCard from "./QueryCard";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 const AllQueries = () => {
+  useDocumentTitle("All Queries|Suggestify");
   const [queries, setQueries] = useState([]);
   const [filteredQueries, setFilteredQueries] = useState([]);
   const [grid, setGrid] = useState("grid-cols-1");

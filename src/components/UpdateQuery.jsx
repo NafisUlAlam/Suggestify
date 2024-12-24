@@ -19,7 +19,7 @@ const UpdateQuery = () => {
 
   const { user } = useContext(AuthContext);
   //console.log(user.photoURL);
-  useDocumentTitle(`Add Query|Suggestify`);
+  useDocumentTitle(`Update Query|Suggestify`);
 
   const inputRef = useRef();
   useEffect(() => {
