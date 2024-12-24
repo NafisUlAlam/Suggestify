@@ -1,19 +1,31 @@
 import { useContext, useEffect, useState } from "react";
 import QueryBanner from "./QueryBanner";
-import axios from "axios";
+
 import { AuthContext } from "../contexts/AuthContext";
 import MyQueryCard from "./MyQueryCard";
 import { toast } from "react-toastify";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const MyQueries = () => {
   const { user } = useContext(AuthContext);
   const [queries, setQueries] = useState([]);
+
+  const axiosInstance = useAxiosSecure();
+  //console.log(axiosInstance);
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:5000/queries?email=${user.email}`)
+  //     .then((res) => setQueries(res.data))
+  //     .catch((err) => toast.error(err));
+  // }, [user.email]);
+
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/queries?email=${user.email}`)
+    axiosInstance
+      .get(`/userqueries/?email=${user.email}`)
       .then((res) => setQueries(res.data))
       .catch((err) => toast.error(err));
-  }, [user.email]);
+  }, [axiosInstance, user.email]);
+  //console.log(queries);
   return (
     <div>
       {/* query banner which navigates to addquery page*/}

@@ -26,8 +26,6 @@ const router = createBrowserRouter([
       {
         path: "/allqueries",
         element: <AllQueries></AllQueries>,
-        loader: () =>
-          fetch("https://assignment-10-server-nu-six.vercel.app/equipments"),
       },
 
       {
