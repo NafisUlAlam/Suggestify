@@ -13,7 +13,7 @@ const Login = () => {
   const location = useLocation();
 
   //console.log(location);
-  useDocumentTitle(`${location.pathname.split("/")[1]}|Sports Hub`);
+  useDocumentTitle(`${location.pathname.split("/")[1]}|Suggestify`);
   //console.log(loading);
   //console.log(location);
   //on render complete, email is focused

@@ -17,7 +17,7 @@ const Register = () => {
   const location = useLocation();
 
   //console.log(location);
-  useDocumentTitle(`${location.pathname.split("/")[1]}|Sports Hub`);
+  useDocumentTitle(`${location.pathname.split("/")[1]}|Suggestify`);
   //console.log(location);
   //on render complete, focus on name field
   const inputRef = useRef(null);

@@ -2,7 +2,7 @@ const Motto = () => {
   return (
     <div className="my-12">
       <span className="text-sm font-bold text-[#b5be2d] text-center mb-2 block">
-        Sports Hub: Empowering Decisions Together!
+        Suggestify: Empowering Decisions Together!
       </span>
       <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-center mb-12 ">
         Your Gateway to Product Insights

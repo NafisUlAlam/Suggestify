@@ -1,19 +1,12 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const QueryBanner = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <div
-        className="hero min-h-screen"
-        style={{
-          backgroundImage:
-            "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
-        }}
-      >
+      <div className="hero min-h-screen bg-queryBanner">
         <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-conten text-gray-200 text-center">
+        <div className="hero-content text-center text-gray-200">
           <div className="">
             <h1 className="mb-5 text-2xl md:text-5xl font-bold">
               Unlock Smarter Product Decisions
@@ -29,7 +22,7 @@ const QueryBanner = () => {
                 navigate("/addqueries");
               }}
             >
-              Get Started
+              Ask Away
             </button>
           </div>
         </div>

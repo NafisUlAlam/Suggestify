@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 const AddQueries = () => {
   const { user } = useContext(AuthContext);
   //console.log(user.photoURL);
-  useDocumentTitle(`Add Query|Sports Hub`);
+  useDocumentTitle(`Add Query|Suggestify`);
   const inputRef = useRef();
   useEffect(() => {
     inputRef.current.focus();

@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import TitleAndSubTitle from "./TitleAndSubTitle";
 
 const RecommendationsForMe = () => {
   const { user } = useContext(AuthContext);
@@ -26,10 +27,12 @@ const RecommendationsForMe = () => {
   }
 
   return (
-    <div className="overflow-x-auto">
-      <h2 className="text-xl font-bold mb-4">
-        Recommendations For Your Queries
-      </h2>
+    <div className="overflow-x-auto min-h-screen">
+      <TitleAndSubTitle
+        title={`Recommendations For Your Queries`}
+        subtitle={`Take a look at what others responded to your questions!`}
+      ></TitleAndSubTitle>
+
       <table className="table table-zebra w-full">
         <thead>
           <tr>

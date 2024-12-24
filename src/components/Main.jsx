@@ -9,7 +9,7 @@ import { Fade, Slide } from "react-awesome-reveal";
 
 import ShowLatestCards from "./ShowLatestCards";
 const Main = () => {
-  useDocumentTitle(`Home|Sports Hub`);
+  useDocumentTitle(`Home|Suggestify`);
 
   return (
     <div className="min-h-[600px] ">

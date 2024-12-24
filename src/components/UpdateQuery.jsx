@@ -19,7 +19,7 @@ const UpdateQuery = () => {
 
   const { user } = useContext(AuthContext);
   //console.log(user.photoURL);
-  useDocumentTitle(`Add Query|Sports Hub`);
+  useDocumentTitle(`Add Query|Suggestify`);
 
   const inputRef = useRef();
   useEffect(() => {

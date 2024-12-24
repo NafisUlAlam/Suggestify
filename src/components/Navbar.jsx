@@ -123,7 +123,7 @@ const Navbar = () => {
           to="/"
           className="bg-gradient-to-r font-bold text-2xl from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent"
         >
-          Sports Hub
+          Suggestify
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

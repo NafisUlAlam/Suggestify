@@ -16,12 +16,13 @@ const useAxiosSecure = () => {
   axiosInstance.interceptors.response.use(
     (response) => response,
     (error) => {
+      //console.log(error);
       if (error.status === 401 || error.status === 403) {
         logOut()
-          .then()
+          .then(() => navigate("/"))
           .catch((err) => console.log(err));
-        navigate("/");
       }
+      Promise.reject(error);
     }
   );
   return axiosInstance;

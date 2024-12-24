@@ -5,6 +5,7 @@ import { AuthContext } from "../contexts/AuthContext";
 import MyQueryCard from "./MyQueryCard";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import TitleAndSubTitle from "./TitleAndSubTitle";
 
 const MyQueries = () => {
   const { user } = useContext(AuthContext);
@@ -31,6 +32,13 @@ const MyQueries = () => {
       {/* query banner which navigates to addquery page*/}
       <QueryBanner></QueryBanner>
       {/* query section which we get from database*/}
+      <TitleAndSubTitle
+        title={"Your Queries, Our Recommendations"}
+        subtitle={`Discover tailored suggestions for every query you post and explore
+          thoughtful recommendations from others. Empower your decisions with a
+          community-driven platform designed for clarity and collaboration.`}
+      ></TitleAndSubTitle>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {queries.length > 0 ? (
           queries.map((query) => (

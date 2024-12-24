@@ -3,18 +3,27 @@ import { AuthContext } from "../contexts/AuthContext";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../hooks/useAxiosSecure";
+import TitleAndSubTitle from "./TitleAndSubTitle";
 
 const MyRecommendations = () => {
   const { user } = useContext(AuthContext);
   const [recommendations, setRecommendations] = useState([]);
   //console.log(recommendations);
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:5000/recommendations?email=${user.email}`)
+  //     .then((res) => setRecommendations(res.data))
+  //     .catch((err) => toast.error(err));
+  // }, [user.email]);
+
+  const axiosInstance = useAxiosSecure();
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/recommendations?email=${user.email}`)
+    axiosInstance
+      .get(`/myrecommendations?email=${user.email}`)
       .then((res) => setRecommendations(res.data))
       .catch((err) => toast.error(err));
-  }, [user.email]);
-
+  }, [user.email, axiosInstance]);
   const handleDeleteRecommendation = (_id, query_id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -53,7 +62,10 @@ const MyRecommendations = () => {
   }
   return (
     <div className="overflow-x-auto">
-      <h2 className="text-xl font-bold mb-4">Your Recommendations</h2>
+      <TitleAndSubTitle
+        title={`Your Recommendations at a Glance`}
+        subtitle={`View all the recommendations you've made to help others make informed choices. Manage and delete your contributions, all in one place, for a seamless experience.`}
+      ></TitleAndSubTitle>
       <table className="table table-zebra w-full">
         <thead>
           <tr>

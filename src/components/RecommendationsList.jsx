@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
+import TitleAndSubTitle from "./TitleAndSubTitle";
 
 const RecommendationsList = ({ queryId }) => {
   const [recommendations, setRecommendations] = useState([]);
@@ -35,10 +36,11 @@ const RecommendationsList = ({ queryId }) => {
   }
 
   return (
-    <div className="mt-6">
-      <h3 className="text-xl font-bold text-primary mb-4">
-        Recommendations for this Query
-      </h3>
+    <div className="my-6">
+      <TitleAndSubTitle
+        title={`Recommendations for Your Query`}
+        subtitle={`Explore personalized suggestions for the product you've inquired about. Get insights from the community and discover the best options to make an informed choice.`}
+      ></TitleAndSubTitle>
       <ul className="space-y-4">
         {recommendations.map((rec) => (
           <li key={rec._id} className="bg-base-200 p-4 rounded-lg shadow">

@@ -30,11 +30,13 @@ const QueryCard = ({ query }) => {
       </div>
 
       <div className="p-4">
-        <img
-          src={photo}
-          alt="Product"
-          className="rounded-lg mb-4 h-[200px] object-contain"
-        />
+        <div className="grid place-items-center">
+          <img
+            src={photo}
+            alt="Product"
+            className="rounded-lg mb-4 h-[200px] object-contain"
+          />
+        </div>
         <h3 className="font-bold text-xl  mb-2">{queryTitle}</h3>
         <h3 className="font-semibold text-xl  mb-2">Product: {itemName}</h3>
         <p className="text-sm  mb-2">
