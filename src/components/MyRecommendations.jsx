@@ -5,8 +5,10 @@ import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import TitleAndSubTitle from "./TitleAndSubTitle";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 const MyRecommendations = () => {
+  useDocumentTitle("My Recommendations|Suggestify");
   const { user } = useContext(AuthContext);
   const [recommendations, setRecommendations] = useState([]);
   //console.log(recommendations);
