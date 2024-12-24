@@ -16,7 +16,7 @@ const QueryCard = ({ query }) => {
   } = query;
   const result = formatDistance(new Date(), timeOfPost);
   return (
-    <div className="card w-full bg-base-100 shadow-md border">
+    <div className="card w-full bg-base-100 shadow-md border justify-between">
       <div className="flex items-center p-4">
         <img
           src={originalPosterImg}
@@ -45,7 +45,7 @@ const QueryCard = ({ query }) => {
         </p>
       </div>
 
-      <div className="card-actions justify-between p-4 border-t">
+      <div className="card-actions justify-between items-center p-4 border-t">
         <span className="badge badge-outline badge-primary">
           Recommendations: {recommendationCount}
         </span>

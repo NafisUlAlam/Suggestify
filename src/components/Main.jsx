@@ -1,4 +1,3 @@
-import { Outlet } from "react-router-dom";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import Banner from "./Banner";
 import Dealerships from "./Dealerships";
@@ -7,8 +6,11 @@ import Dealerships from "./Dealerships";
 import Lotties from "./Lotties";
 import Motto from "./Motto";
 import { Fade, Slide } from "react-awesome-reveal";
+
+import ShowLatestCards from "./ShowLatestCards";
 const Main = () => {
   useDocumentTitle(`Home|Sports Hub`);
+
   return (
     <div className="min-h-[600px] ">
       <div className="min-h-screen">
@@ -22,9 +24,7 @@ const Main = () => {
         <Lotties></Lotties>
       </Fade>
 
-      {/* <Slide>
-        <Products></Products>
-      </Slide> */}
+      <ShowLatestCards></ShowLatestCards>
       {/* <Slide direction="right">
         <Outlet></Outlet>
       </Slide> */}

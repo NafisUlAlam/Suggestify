@@ -3,15 +3,8 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import Error from "../components/Error";
 import Home from "../components/Home";
-// import ForgotPass from "../components/ForgotPass";
 import Main from "../components/Main";
 import PrivateRoute from "./PrivateRoute";
-// import AddEquipments from "./../components/AddEquipments";
-// import AllEquipments from "../components/AllEquipments";
-// import DetailedEquipmentCard from "../components/DetailedEquipmentCard";
-// import MyEquipments from "./../components/MyEquipments";
-// import UpdateEquipments from "./../components/UpdateEquipments";
-// import AllProducts from "../components/AllProducts";
 import MyQueries from "./../components/MyQueries";
 import AddQueries from "./../components/AddQueries";
 import UpdateQuery from "../components/UpdateQuery";
@@ -29,25 +22,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Main></Main>,
-
-        //     children: [
-        //       {
-        //         path: "/",
-        //         element: <AllProducts></AllProducts>,
-        //       },
-        //       {
-        //         path: "/allproducts",
-        //         element: <AllProducts></AllProducts>,
-        //       },
-        //       {
-        //         path: "/sports",
-        //         element: <AllProducts></AllProducts>,
-        //       },
-        //       {
-        //         path: "/fitness",
-        //         element: <AllProducts></AllProducts>,
-        //       },
-        //     ],
       },
       {
         path: "/allqueries",
@@ -64,11 +38,6 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login></Login>,
       },
-
-      //   {
-      //     path: "/forgotpassword",
-      //     element: <ForgotPass></ForgotPass>,
-      //   },
 
       {
         path: "/myqueries",
