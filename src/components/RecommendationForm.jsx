@@ -11,8 +11,15 @@ const RecommendationForm = ({
   setCurrentQuery,
 }) => {
   const { user } = useContext(AuthContext);
-  const { itemName, queryTitle, originalPoster, originalPosterEmail, _id } =
-    query;
+  const {
+    itemName,
+    queryTitle,
+    originalPoster,
+    originalPosterEmail,
+    _id,
+    photo,
+    originalPosterImg,
+  } = query;
   const handleAddRecommendation = (e) => {
     e.preventDefault();
     //console.log(user.photoURL);
@@ -42,7 +49,8 @@ const RecommendationForm = ({
       queryTitle,
       originalPoster,
       originalPosterEmail,
-
+      originalPosterImg,
+      photo,
       query_id: _id,
     };
     //console.log(myRecommendation);
@@ -63,7 +71,7 @@ const RecommendationForm = ({
             position: "top-center",
           });
           myRecommendation._id = data.insertedId;
-          console.log(currentQuery);
+          //console.log(currentQuery);
           const newArray = [myRecommendation, ...recommendations];
           setRecommendations(newArray);
           const newQuery = {

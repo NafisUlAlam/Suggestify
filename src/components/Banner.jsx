@@ -33,7 +33,7 @@ const Banner = () => {
         <img src={slider3} className="w-full h-[600px] object-contain" alt="" />
       </SwiperSlide>
       <SwiperSlide>
-        <div className="grid min-h-[600px] place-items-center">
+        <div className="grid h-[600px] place-items-center">
           <img src={slider4} className="w-full object-contain" alt="" />
         </div>
       </SwiperSlide>

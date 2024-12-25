@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import TitleAndSubTitle from "./TitleAndSubTitle";
 import useDocumentTitle from "../hooks/useDocumentTitle";
+import { Fade } from "react-awesome-reveal";
 
 const MyRecommendations = () => {
   useDocumentTitle("My Recommendations|Suggestify");
@@ -62,45 +63,76 @@ const MyRecommendations = () => {
   if (recommendations.length === 0) {
     return <p>You have no recommendations yet.</p>;
   }
+  console.log(recommendations);
   return (
     <div className="overflow-x-auto">
-      <TitleAndSubTitle
-        title={`Your Recommendations at a Glance`}
-        subtitle={`View all the recommendations you've made to help others make informed choices. Manage and delete your contributions, all in one place, for a seamless experience.`}
-      ></TitleAndSubTitle>
-      <table className="table table-zebra w-full">
-        <thead>
-          <tr>
-            <th>Queried Product</th>
-            <th>Recommended Product</th>
-            <th>Recommendation Title</th>
-            <th>Recommendation Reason</th>
-            <th>Created On</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {recommendations.map((rec) => (
-            <tr key={rec._id}>
-              <td>{rec.itemName}</td>
-              <td>{rec.recommendationItemname}</td>
-              <td>{rec.recommendationTitle}</td>
-              <td>{rec.recommendationReasons}</td>
-              <td>{new Date(rec.timeOfPost).toLocaleDateString()}</td>
-              <td>
-                <button
-                  className="btn btn-accent"
-                  onClick={() =>
-                    handleDeleteRecommendation(rec._id, rec.query_id)
-                  }
-                >
-                  Delete
-                </button>
-              </td>
+      <Fade>
+        <TitleAndSubTitle
+          title={`Your Recommendations at a Glance`}
+          subtitle={`View all the recommendations you've made to help others make informed choices. Manage and delete your contributions, all in one place, for a seamless experience.`}
+        ></TitleAndSubTitle>
+      </Fade>
+      <Fade delay={500}>
+        <table className="table table-zebra w-full">
+          <thead>
+            <tr className="text-center">
+              <th></th>
+              <th>Queried Product</th>
+              <th>Recommended Product</th>
+              <th>Recommendation Title</th>
+              <th>Recommendation Reason</th>
+              <th>Created On</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className="text-center">
+            {recommendations.map((rec) => (
+              <tr key={rec._id}>
+                <td>
+                  <img
+                    src={rec.originalPosterImg}
+                    className="size-8 rounded-full"
+                    alt=""
+                  />
+                </td>
+                <td>
+                  <div className="flex flex-col items-center gap-2">
+                    <img
+                      src={rec.photo}
+                      className="size-16 object-scale-down"
+                      alt=""
+                    />
+                    <h2>{rec.itemName}</h2>
+                  </div>
+                </td>
+                <td>
+                  <div className="flex flex-col items-center gap-2">
+                    <img
+                      src={rec.recommendationItemPhoto}
+                      className="size-16 object-scale-down"
+                      alt=""
+                    />
+                    <h2>{rec.recommendationItemname}</h2>
+                  </div>
+                </td>
+                <td>{rec.recommendationTitle}</td>
+                <td>{rec.recommendationReasons}</td>
+                <td>{new Date(rec.timeOfPost).toLocaleDateString()}</td>
+                <td>
+                  <button
+                    className="btn btn-accent"
+                    onClick={() =>
+                      handleDeleteRecommendation(rec._id, rec.query_id)
+                    }
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </Fade>
     </div>
   );
 };
