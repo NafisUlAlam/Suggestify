@@ -46,7 +46,7 @@ const DetailedQueryCard = ({ query }) => {
         <img
           src={photo}
           alt={itemName}
-          className="w-25 h-25 rounded-md object-cover mr-4"
+          className="max-h-[300px] rounded-md object-cover mr-4"
         />
       </div>
       <div className="flex gap-4 items-center my-2">

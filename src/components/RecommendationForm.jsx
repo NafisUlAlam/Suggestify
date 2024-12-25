@@ -3,7 +3,13 @@ import { AuthContext } from "../contexts/AuthContext";
 import { toast } from "react-toastify";
 import PropTypes from "prop-types";
 
-const RecommendationForm = ({ query }) => {
+const RecommendationForm = ({
+  query,
+  setRecommendations,
+  recommendations,
+  currentQuery,
+  setCurrentQuery,
+}) => {
   const { user } = useContext(AuthContext);
   const { itemName, queryTitle, originalPoster, originalPosterEmail, _id } =
     query;
@@ -52,15 +58,25 @@ const RecommendationForm = ({ query }) => {
       .then((data) => {
         //console.log(data);
         if (data.insertedId) {
+          console.log(data.insertedId);
           toast.success("Successfully added the Recommendation!", {
             position: "top-center",
           });
+          myRecommendation._id = data.insertedId;
+          console.log(currentQuery);
+          const newArray = [myRecommendation, ...recommendations];
+          setRecommendations(newArray);
+          const newQuery = {
+            ...currentQuery,
+            recommendationCount: currentQuery.recommendationCount + 1,
+          };
+          setCurrentQuery(newQuery);
         }
       })
       .catch((err) => toast.error(err, { position: "top-center" }));
   };
   return (
-    <div className="card  w-full shrink-0 shadow-2xl md:p-8">
+    <div className="card  w-full shrink-0 border-2 md:p-8 lg:w-[50%] mx-auto">
       <h2 className="font-bold text-xl md:text-2xl lg:text-3xl text-center pt-4">
         Recommendation Form
       </h2>
@@ -168,5 +184,9 @@ const RecommendationForm = ({ query }) => {
 
 RecommendationForm.propTypes = {
   query: PropTypes.object,
+  recommendations: PropTypes.array,
+  setRecommendations: PropTypes.func,
+  currentQuery: PropTypes.object,
+  setCurrentQuery: PropTypes.func,
 };
 export default RecommendationForm;
