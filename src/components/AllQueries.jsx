@@ -5,6 +5,7 @@ import QueryCard from "./QueryCard";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import { Fade } from "react-awesome-reveal";
 import TitleAndSubTitle from "./TitleAndSubTitle";
+import Nothing from "./Nothing";
 
 const AllQueries = () => {
   useDocumentTitle("All Queries|Suggestify");
@@ -30,7 +31,7 @@ const AllQueries = () => {
   const handleSearch = (e) => {
     const text = e.target.value.toLowerCase();
     setSearchText(text);
-    console.log(text.length);
+    //console.log(text.length);
     const filtered = queries.filter((query) =>
       query.itemName.toLowerCase().includes(text)
     );
@@ -82,10 +83,20 @@ const AllQueries = () => {
           </button>
         </div>
       </div>
-      <div className={`grid ${grid} gap-4 `}>
-        {filteredQueries.map((query) => (
-          <QueryCard key={query._id} query={query}></QueryCard>
-        ))}
+      <div
+        className={`${
+          filteredQueries.length > 0
+            ? `grid ${grid} gap-4`
+            : "grid place-items-center"
+        }  `}
+      >
+        {filteredQueries.length > 0 ? (
+          filteredQueries.map((query) => (
+            <QueryCard key={query._id} query={query}></QueryCard>
+          ))
+        ) : (
+          <Nothing title={`Sorry No Such Products For ${searchText}`}></Nothing>
+        )}
       </div>
     </div>
   );

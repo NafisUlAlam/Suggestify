@@ -18,7 +18,7 @@ const QueryCard = ({ query }) => {
   const result = formatDistance(new Date(), timeOfPost);
   return (
     <Fade>
-      <div className="card w-full bg-base-100 shadow-md border justify-between">
+      <div className="card h-full bg-base-100 shadow-md border justify-between">
         <div className="flex items-center p-4">
           <img
             src={originalPosterImg}
