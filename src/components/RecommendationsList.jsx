@@ -20,19 +20,19 @@ const RecommendationsList = ({ recommendations }) => {
           <Slide key={rec._id} direction="right" delay={100 * (index + 1)}>
             <li className="bg-base-200 p-4 rounded-lg shadow ">
               <div className="flex items-center space-x-4">
-                <div>
-                  <img
-                    src={rec.recommendationPosterImg}
-                    alt={rec.recommendationPoster}
-                    className="w-16 h-16 rounded-full"
-                  />
-                  <p className="font-medium text-center ">
-                    {rec.recommendationPoster}
-                  </p>
+                <div className="w-[20%] ">
+                  <div className="flex flex-col items-center">
+                    <img
+                      src={rec.recommendationPosterImg}
+                      alt={rec.recommendationPoster}
+                      className="w-16 h-16 rounded-full"
+                    />
+                    <p className="font-medium ">{rec.recommendationPoster}</p>
+                  </div>
                 </div>
 
-                <div className="flex-grow">
-                  <div className="flex justify-center flex-col items-center">
+                <div className="w-[70%]">
+                  <div className="flex justify-center flex-col items-center space-y-4">
                     <h4 className="text-lg font-semibold text-primary">
                       {rec.recommendationTitle}
                     </h4>
@@ -52,7 +52,7 @@ const RecommendationsList = ({ recommendations }) => {
                     </p>
                   </div>
                 </div>
-                <div className="text-right flex-0 ">
+                <div className="text-right flex-0 w-[20%]">
                   <div className="flex justify-end">
                     <img
                       src={rec.recommendationItemPhoto}

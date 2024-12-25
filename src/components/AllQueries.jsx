@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import QueryCard from "./QueryCard";
 import useDocumentTitle from "../hooks/useDocumentTitle";
+import { Fade } from "react-awesome-reveal";
+import TitleAndSubTitle from "./TitleAndSubTitle";
 
 const AllQueries = () => {
   useDocumentTitle("All Queries|Suggestify");
@@ -45,6 +47,12 @@ const AllQueries = () => {
   if (loading) return <span className="loading loading-bars loading-lg"></span>;
   return (
     <div>
+      <Fade>
+        <TitleAndSubTitle
+          title={`Help Others With Your Valuable Insights`}
+          subtitle={`Discover a diverse range of product queries from our community. Join the conversation by sharing recommendations or insights for the products you care about.`}
+        ></TitleAndSubTitle>
+      </Fade>
       <div className="my-4 flex justify-between items-center flex-wrap">
         <input
           type="text"

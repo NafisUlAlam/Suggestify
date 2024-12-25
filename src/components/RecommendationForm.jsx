@@ -95,11 +95,11 @@ const RecommendationForm = ({
       >
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Recommended Item Name</span>
+            <span className="label-text">Name</span>
           </label>
           <input
             type="text"
-            placeholder="item name"
+            placeholder="recommended item name"
             name="recommendationItemname"
             className="input input-bordered bg-blue-50"
             required
@@ -108,11 +108,11 @@ const RecommendationForm = ({
 
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Recommended Brand</span>
+            <span className="label-text">Brand</span>
           </label>
           <input
             type="text"
-            placeholder="brand"
+            placeholder="recommended brand"
             name="recommendationItembrand"
             className="input input-bordered bg-blue-50"
             required
@@ -121,11 +121,11 @@ const RecommendationForm = ({
 
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Recommended item Photo</span>
+            <span className="label-text">Photo</span>
           </label>
           <input
             type="text"
-            placeholder="Photo URL"
+            placeholder="item photo URL"
             name="recommendationItemPhoto"
             className="input input-bordered bg-blue-50"
             required
@@ -134,11 +134,11 @@ const RecommendationForm = ({
 
         <div className="form-control relative">
           <label className="label">
-            <span className="label-text">Recommendation Title</span>
+            <span className="label-text">Title</span>
           </label>
           <input
             type="text"
-            placeholder="title"
+            placeholder="recommendation title"
             name="recommendationTitle"
             className="input input-bordered bg-blue-50"
             required
