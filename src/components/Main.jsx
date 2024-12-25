@@ -1,13 +1,13 @@
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import Banner from "./Banner";
 import Dealerships from "./Dealerships";
-// import Products from "./Products";
-// import Review from "./Review";
+
 import Lotties from "./Lotties";
 import Motto from "./Motto";
 import { Fade, Slide } from "react-awesome-reveal";
 
 import ShowLatestCards from "./ShowLatestCards";
+import Review from "./Review";
 const Main = () => {
   useDocumentTitle(`Home|Suggestify`);
 
@@ -20,18 +20,16 @@ const Main = () => {
         <Motto></Motto>
         <Dealerships></Dealerships>
       </Slide>
-      <Fade duration={1000}>
+      <Fade duration={500}>
         <Lotties></Lotties>
       </Fade>
 
-      <ShowLatestCards></ShowLatestCards>
-      {/* <Slide direction="right">
-        <Outlet></Outlet>
-      </Slide> */}
-
-      {/* <Fade>
+      <Fade duration={700}>
+        <ShowLatestCards></ShowLatestCards>
+      </Fade>
+      <Fade duration={900}>
         <Review></Review>
-      </Fade> */}
+      </Fade>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import slider1 from "../assets/question.png";
 import slider2 from "../assets/lookingforanswer.png";
-import slider3 from "../assets/confused-boy-and-boy-finding-the-answer-vector.jpg";
+import slider3 from "../assets/confused-bov.png";
 import slider4 from "../assets/approved.png";
 import "swiper/css/autoplay"; // Import autoplay styles
 import { Autoplay } from "swiper/modules";
@@ -21,7 +21,7 @@ const Banner = () => {
       speed={5000}
       spaceBetween={10}
       slidesPerView={1}
-      className="bg-banner3 bg-cover bg-no-repeat bg-center h-[650px]"
+      className="bg-banner5 bg-cover bg-no-repeat bg-center h-[650px]"
     >
       <SwiperSlide>
         <img src={slider1} className="w-full h-[600px] object-contain" alt="" />

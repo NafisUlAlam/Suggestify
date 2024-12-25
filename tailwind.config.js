@@ -8,6 +8,8 @@ export default {
         banner: "url(/assets/layered-waves-haikei.svg)",
         banner2: "url(/assets/wave-haikei.svg)",
         banner3: "url(/assets/stacked-peaks-haikei.svg)",
+        banner4: "url(/assets/review.png)",
+        banner5: "url(/assets/hello.png)",
         queryBanner:
           "url(https://i.ibb.co.com/3Cj8zLL/thoughtful-woman-with-laptop-looking-big-question-mark-1150-39362.jpg)",
       },
