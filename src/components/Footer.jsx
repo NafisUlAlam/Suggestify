@@ -1,5 +1,12 @@
 import { Fade } from "react-awesome-reveal";
-import { FaFacebook, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -44,10 +51,38 @@ const Footer = () => {
         </footer>
         <h2 className="mt-10 text-center">Follow us on</h2>
         <div className="flex gap-4 justify-center my-4">
-          <FaInstagram size={30}></FaInstagram>
-          <FaFacebook size={30}></FaFacebook>
-          <FaTwitter size={30}></FaTwitter>
-          <FaGithub size={30}></FaGithub>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram size={30}></FaInstagram>
+          </a>
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebook size={30}></FaFacebook>
+          </a>
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer">
+            <FaTwitter size={30}></FaTwitter>
+          </a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub size={30}></FaGithub>
+          </a>
+
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin size={30}></FaLinkedin>
+          </a>
         </div>
         <hr className="text-white mt-8" />
         <p className="text-center mt-8">

@@ -5,6 +5,7 @@ import useAxiosSecure from "../hooks/useAxiosSecure";
 import TitleAndSubTitle from "./TitleAndSubTitle";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import { Fade } from "react-awesome-reveal";
+import Nothing from "./Nothing";
 
 const RecommendationsForMe = () => {
   useDocumentTitle("Recommendations For Me|Suggestify");
@@ -26,7 +27,7 @@ const RecommendationsForMe = () => {
   }, [user.email, axiosInstance]);
   console.log(recommendations);
   if (recommendations.length === 0) {
-    return <p>No recommendations for your queries yet.</p>;
+    return <Nothing title={`No recommendations for you`}></Nothing>;
   }
 
   return (

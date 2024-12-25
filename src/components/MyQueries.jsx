@@ -7,11 +7,14 @@ import { toast } from "react-toastify";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import TitleAndSubTitle from "./TitleAndSubTitle";
 import useDocumentTitle from "../hooks/useDocumentTitle";
+import Nothing from "./Nothing";
+import { useNavigate } from "react-router-dom";
 
 const MyQueries = () => {
   useDocumentTitle("My Queries|Suggestify");
   const { user } = useContext(AuthContext);
   const [queries, setQueries] = useState([]);
+  const navigate = useNavigate();
 
   const axiosInstance = useAxiosSecure();
   //console.log(axiosInstance);
@@ -41,7 +44,13 @@ const MyQueries = () => {
           community-driven platform designed for clarity and collaboration.`}
       ></TitleAndSubTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div
+        className={`${
+          queries.length > 0
+            ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+            : "grid grid-cols-1 place-items-center"
+        }`}
+      >
         {queries.length > 0 ? (
           queries.map((query) => (
             <MyQueryCard
@@ -52,7 +61,17 @@ const MyQueries = () => {
             ></MyQueryCard>
           ))
         ) : (
-          <p>Nothing to show</p>
+          <div className="text-center">
+            <Nothing title={`You Don't Have Any Query Posted`}></Nothing>
+            <button
+              className="btn btn-primary"
+              onClick={() => {
+                navigate("/addqueries");
+              }}
+            >
+              Ask Away
+            </button>
+          </div>
         )}
       </div>
     </div>

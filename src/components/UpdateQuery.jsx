@@ -181,7 +181,7 @@ const UpdateQuery = () => {
             />
           </div>
           <button className="btn btn-accent md:col-span-2 my-8">
-            Add Query
+            Update Query
           </button>
         </form>
       </div>

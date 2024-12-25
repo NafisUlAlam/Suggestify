@@ -7,6 +7,7 @@ import useAxiosSecure from "../hooks/useAxiosSecure";
 import TitleAndSubTitle from "./TitleAndSubTitle";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import { Fade } from "react-awesome-reveal";
+import Nothing from "./Nothing";
 
 const MyRecommendations = () => {
   useDocumentTitle("My Recommendations|Suggestify");
@@ -61,7 +62,9 @@ const MyRecommendations = () => {
     });
   };
   if (recommendations.length === 0) {
-    return <p>You have no recommendations yet.</p>;
+    return (
+      <Nothing title={`You Haven't Made Any Recommendations Yet`}></Nothing>
+    );
   }
   console.log(recommendations);
   return (
