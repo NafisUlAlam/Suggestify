@@ -6,6 +6,7 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
 import { Fade } from "react-awesome-reveal";
 import TitleAndSubTitle from "./TitleAndSubTitle";
 import Nothing from "./Nothing";
+import PageLoading from "./PageLoading";
 
 const AllQueries = () => {
   useDocumentTitle("All Queries|Suggestify");
@@ -16,7 +17,7 @@ const AllQueries = () => {
   const [searchText, setSearchText] = useState("");
   useEffect(() => {
     axios
-      .get("http://localhost:5000/queries")
+      .get("https://assignment-11-server-theta-mocha.vercel.app/queries")
       .then((res) => {
         setQueries(res.data);
         setFilteredQueries(res.data);
@@ -45,7 +46,7 @@ const AllQueries = () => {
   };
   //console.log(filteredQueries);
   // console.log(grid);
-  if (loading) return <span className="loading loading-bars loading-lg"></span>;
+  if (loading) return <PageLoading></PageLoading>;
   return (
     <div>
       <Fade>

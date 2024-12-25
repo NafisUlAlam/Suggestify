@@ -11,7 +11,7 @@ const ShowLatestCards = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/queries")
+      .get("https://assignment-11-server-theta-mocha.vercel.app/queries")
       .then((res) => {
         setQueries(res.data.slice(0, 6));
 

@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 const Review = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://assignment-11-server-theta-mocha.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data))
       .catch((err) => toast.error(err));

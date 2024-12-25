@@ -76,7 +76,10 @@ const router = createBrowserRouter([
             <DetailedQueryPage></DetailedQueryPage>
           </PrivateRoute>
         ),
-        loader: (e) => fetch(`http://localhost:5000/queries/${e.params.id}`),
+        loader: (e) =>
+          fetch(
+            `https://assignment-11-server-theta-mocha.vercel.app/queries/${e.params.id}`
+          ),
       },
       {
         path: `/updatequery/:id`,
@@ -85,7 +88,10 @@ const router = createBrowserRouter([
             <UpdateQuery></UpdateQuery>
           </PrivateRoute>
         ),
-        loader: (e) => fetch(`http://localhost:5000/queries/${e.params.id}`),
+        loader: (e) =>
+          fetch(
+            `https://assignment-11-server-theta-mocha.vercel.app/queries/${e.params.id}`
+          ),
       },
     ],
   },

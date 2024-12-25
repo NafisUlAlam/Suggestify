@@ -41,7 +41,7 @@ const AddQueries = () => {
     };
     //console.log(myQuery);
     e.target.reset();
-    fetch("http://localhost:5000/queries", {
+    fetch("https://assignment-11-server-theta-mocha.vercel.app/queries", {
       method: "POST",
       headers: {
         "content-type": "application/json",

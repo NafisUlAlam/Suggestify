@@ -54,13 +54,16 @@ const UpdateQuery = () => {
     };
     //console.log(myQuery);
     e.target.reset();
-    fetch(`http://localhost:5000/queries/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(myQuery),
-    })
+    fetch(
+      `https://assignment-11-server-theta-mocha.vercel.app/queries/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(myQuery),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         //console.log(data);

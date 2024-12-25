@@ -20,7 +20,7 @@ const MyQueries = () => {
   //console.log(axiosInstance);
   // useEffect(() => {
   //   axios
-  //     .get(`http://localhost:5000/queries?email=${user.email}`)
+  //     .get(`https://assignment-11-server-theta-mocha.vercel.app/queries?email=${user.email}`)
   //     .then((res) => setQueries(res.data))
   //     .catch((err) => toast.error(err));
   // }, [user.email]);

@@ -55,13 +55,16 @@ const RecommendationForm = ({
     };
     //console.log(myRecommendation);
     e.target.reset();
-    fetch("http://localhost:5000/recommendations", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(myRecommendation),
-    })
+    fetch(
+      "https://assignment-11-server-theta-mocha.vercel.app/recommendations",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(myRecommendation),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         //console.log(data);

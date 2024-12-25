@@ -58,7 +58,11 @@ const AuthProvider = ({ children }) => {
         const user = { email: currentUser.email };
 
         axios
-          .post("http://localhost:5000/jwt", user, { withCredentials: true })
+          .post(
+            "https://assignment-11-server-theta-mocha.vercel.app/jwt",
+            user,
+            { withCredentials: true }
+          )
           .then((res) => {
             console.log("login token", res.data);
             setLoading(false);
@@ -66,7 +70,7 @@ const AuthProvider = ({ children }) => {
       } else {
         axios
           .post(
-            "http://localhost:5000/logout",
+            "https://assignment-11-server-theta-mocha.vercel.app/logout",
             {},
             {
               withCredentials: true,

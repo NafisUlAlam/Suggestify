@@ -20,7 +20,7 @@ const DetailedQueryPage = () => {
     const fetchRecommendations = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/recommendations?queryId=${currentQuery._id}`
+          `https://assignment-11-server-theta-mocha.vercel.app/recommendations?queryId=${currentQuery._id}`
         );
         setRecommendations(response.data);
         setLoading(false);

@@ -16,7 +16,7 @@ const MyRecommendations = () => {
   //console.log(recommendations);
   // useEffect(() => {
   //   axios
-  //     .get(`http://localhost:5000/recommendations?email=${user.email}`)
+  //     .get(`https://assignment-11-server-theta-mocha.vercel.app/recommendations?email=${user.email}`)
   //     .then((res) => setRecommendations(res.data))
   //     .catch((err) => toast.error(err));
   // }, [user.email]);
@@ -39,9 +39,12 @@ const MyRecommendations = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/recommendations/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://assignment-11-server-theta-mocha.vercel.app/recommendations/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -52,7 +55,9 @@ const MyRecommendations = () => {
             }
           })
           .catch((err) => toast.error(err, { position: "top-center" }));
-        axios.patch(`http://localhost:5000/queries/${query_id}`);
+        axios.patch(
+          `https://assignment-11-server-theta-mocha.vercel.app/queries/${query_id}`
+        );
         Swal.fire({
           title: "Deleted!",
           text: "Your file has been deleted.",

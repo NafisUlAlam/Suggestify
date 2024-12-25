@@ -15,7 +15,7 @@ const RecommendationsForMe = () => {
   //console.log(recommendations);
   // useEffect(() => {
   //   axios
-  //     .get(`http://localhost:5000/recommendationsforme?email=${user.email}`)
+  //     .get(`https://assignment-11-server-theta-mocha.vercel.app/recommendationsforme?email=${user.email}`)
   //     .then((res) => setRecommendations(res.data))
   //     .catch((err) => toast.error(err));
   // }, [user.email]);
