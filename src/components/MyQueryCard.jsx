@@ -57,7 +57,7 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
   const result = formatDistance(new Date(), timeOfPost);
   return (
     <Slide>
-      <div className="card bg-base-100  shadow-xl">
+      <div className="card bg-base-100  shadow-xl h-full justify-between">
         <figure className="px-10 pt-10 ">
           <img
             src={photo}

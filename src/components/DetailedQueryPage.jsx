@@ -7,6 +7,7 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Fade } from "react-awesome-reveal";
+import PageLoading from "./PageLoading";
 
 const DetailedQueryPage = () => {
   const query = useLoaderData();
@@ -56,14 +57,14 @@ const DetailedQueryPage = () => {
       </Fade>
 
       {/* recommendations */}
-      {loading && (
-        <p className="text-center text-neutral">Loading recommendations...</p>
+      {loading ? (
+        <PageLoading></PageLoading>
+      ) : (
+        <RecommendationsList
+          recommendations={recommendations}
+          setRecommendations={setRecommendations}
+        ></RecommendationsList>
       )}
-
-      <RecommendationsList
-        recommendations={recommendations}
-        setRecommendations={setRecommendations}
-      ></RecommendationsList>
     </div>
   );
 };

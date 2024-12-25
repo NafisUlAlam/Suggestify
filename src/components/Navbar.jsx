@@ -50,7 +50,7 @@ const Navbar = () => {
               to="/recommendationsforme"
               className={({ isActive }) => (isActive ? "text-red-400" : "")}
             >
-              Recommendations For Me
+              Recommended For Me
             </NavLink>
           </button>
           <button className="btn">
