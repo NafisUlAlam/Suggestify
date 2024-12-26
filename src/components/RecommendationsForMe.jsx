@@ -36,17 +36,18 @@ const RecommendationsForMe = () => {
   //console.log(recommendations);
 
   return (
-    <div className="overflow-x-auto min-h-screen">
+    <div>
       <Fade>
         <TitleAndSubTitle
           title={`Recommendations For Your Queries`}
           subtitle={`Take a look at what others responded to your questions!`}
         ></TitleAndSubTitle>
       </Fade>
+
       {loading ? (
         <PageLoading></PageLoading>
       ) : recommendations.length > 0 ? (
-        <Fade delay={500}>
+        <div className="overflow-x-auto min-h-screen">
           <table className="table table-zebra w-full">
             <thead>
               <tr className="text-center">
@@ -104,7 +105,7 @@ const RecommendationsForMe = () => {
               ))}
             </tbody>
           </table>
-        </Fade>
+        </div>
       ) : (
         <Nothing title={`There are no recommendations for you`}></Nothing>
       )}

@@ -77,85 +77,87 @@ const MyRecommendations = () => {
 
   return (
     <div>
-      <div className="overflow-x-auto">
-        <Fade>
-          <TitleAndSubTitle
-            title={`Your Recommendations at a Glance`}
-            subtitle={`View all the recommendations you've made to help others make informed choices. Manage and delete your contributions, all in one place, for a seamless experience.`}
-          ></TitleAndSubTitle>
-        </Fade>
-        {loading ? (
-          <PageLoading></PageLoading>
-        ) : (
-          <Fade delay={500}>
-            {recommendations.length > 0 ? (
-              <table className="table table-zebra w-full">
-                <thead>
-                  <tr className="text-center">
-                    <th></th>
-                    <th>Queried Product</th>
-                    <th>Recommended Product</th>
-                    <th>Recommendation Title</th>
-                    <th>Recommendation Reason</th>
-                    <th>Created On</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody className="text-center">
-                  {recommendations.map((rec) => (
-                    <tr key={rec._id}>
-                      <td>
+      <Fade>
+        <TitleAndSubTitle
+          title={`Your Recommendations at a Glance`}
+          subtitle={`View all the recommendations you've made to help others make informed choices. Manage and delete your contributions, all in one place, for a seamless experience.`}
+        ></TitleAndSubTitle>
+      </Fade>
+
+      {loading ? (
+        <PageLoading></PageLoading>
+      ) : (
+        <div className="overflow-x-auto">
+          {recommendations.length > 0 ? (
+            <table className="table table-zebra w-full">
+              <thead>
+                <tr className="text-center">
+                  <th>Inquirer</th>
+                  <th>Queried Product</th>
+                  <th>Recommended Product</th>
+                  <th>Recommendation Title</th>
+                  <th>Recommendation Reason</th>
+                  <th>Created On</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody className="text-center">
+                {recommendations.map((rec) => (
+                  <tr key={rec._id}>
+                    <td>
+                      <div className="flex flex-col items-center">
                         <img
                           src={rec.originalPosterImg}
                           className="size-8 rounded-full"
                           alt=""
                         />
-                      </td>
-                      <td>
-                        <div className="flex flex-col items-center gap-2">
-                          <img
-                            src={rec.photo}
-                            className="size-16 object-scale-down"
-                            alt=""
-                          />
-                          <h2>{rec.itemName}</h2>
-                        </div>
-                      </td>
-                      <td>
-                        <div className="flex flex-col items-center gap-2">
-                          <img
-                            src={rec.recommendationItemPhoto}
-                            className="size-16 object-scale-down"
-                            alt=""
-                          />
-                          <h2>{rec.recommendationItemname}</h2>
-                        </div>
-                      </td>
-                      <td>{rec.recommendationTitle}</td>
-                      <td>{rec.recommendationReasons}</td>
-                      <td>{new Date(rec.timeOfPost).toLocaleDateString()}</td>
-                      <td>
-                        <button
-                          className="btn btn-accent"
-                          onClick={() =>
-                            handleDeleteRecommendation(rec._id, rec.query_id)
-                          }
-                        >
-                          Delete
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            ) : (
-              <Nothing
-                title={`You Haven't Made Any Recommendations Yet`}
-              ></Nothing>
-            )}
-          </Fade>
-        )}
-      </div>
+                        <h2 className="text-center">{rec.originalPoster}</h2>
+                      </div>
+                    </td>
+                    <td>
+                      <div className="flex flex-col items-center gap-2">
+                        <img
+                          src={rec.photo}
+                          className="size-16 object-scale-down"
+                          alt=""
+                        />
+                        <h2>{rec.itemName}</h2>
+                      </div>
+                    </td>
+                    <td>
+                      <div className="flex flex-col items-center gap-2">
+                        <img
+                          src={rec.recommendationItemPhoto}
+                          className="size-16 object-scale-down"
+                          alt=""
+                        />
+                        <h2>{rec.recommendationItemname}</h2>
+                      </div>
+                    </td>
+                    <td>{rec.recommendationTitle}</td>
+                    <td>{rec.recommendationReasons}</td>
+                    <td>{new Date(rec.timeOfPost).toLocaleDateString()}</td>
+                    <td>
+                      <button
+                        className="btn btn-accent"
+                        onClick={() =>
+                          handleDeleteRecommendation(rec._id, rec.query_id)
+                        }
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <Nothing
+              title={`You Haven't Made Any Recommendations Yet`}
+            ></Nothing>
+          )}
+        </div>
+      )}
     </div>
   );
 };

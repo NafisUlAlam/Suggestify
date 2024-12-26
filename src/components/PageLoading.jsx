@@ -1,7 +1,7 @@
 const PageLoading = () => {
   return (
-    <div className="grid place-items-center min-h-[400px]">
-      <img src="https://i.ibb.co.com/GP7w2mK/Windows8-loader.gif" alt="" />
+    <div className="grid place-items-center min-h-screen">
+      <img src="https://i.ibb.co.com/bPw6d6J/loader.gif" alt="" />
     </div>
   );
 };
