@@ -69,7 +69,7 @@ const RecommendationForm = ({
       .then((data) => {
         //console.log(data);
         if (data.insertedId) {
-          console.log(data.insertedId);
+          //console.log(data.insertedId);
           toast.success("Successfully added the Recommendation!", {
             position: "top-center",
           });
