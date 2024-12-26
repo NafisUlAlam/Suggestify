@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { toast } from "react-toastify";
 import Theme from "./Theme";
+import "../App.css";
 const Navbar = () => {
   const { user, logOut, loading } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -121,7 +122,7 @@ const Navbar = () => {
         </div>
         <Link
           to="/"
-          className="bg-gradient-to-r font-bold text-2xl from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent"
+          className=" font-bold text-base lg:text-2xl  gradient-text"
         >
           Suggestify
         </Link>
