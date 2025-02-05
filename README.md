@@ -1,5 +1,7 @@
 # SUGGESTIFY
 
+![Project Screenshot](public/project-ss.png)
+
 # Live Link
 
 - https://nafis-suggestify.netlify.app
@@ -105,10 +107,10 @@ DB_USER=your_database_user
 }
 ```
 
+## Contributing
+
+Contributions are welcome! Feel free to submit issues or pull requests.
+
 ## License
 
 This project is licensed under the MIT License.
-
----
-
-Feel free to modify and improve this project as needed!
