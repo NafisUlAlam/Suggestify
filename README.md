@@ -44,24 +44,24 @@ In this website, users can register using their email and password, also they ca
 
 3. Create a `.env` file in the root directory and add the following:
 
-# Front-End
+- Front-End
 
-```sh
-VITE_apiKey=your_api_key
-VITE_authDomain=your_auth_domain
-VITE_projectId=your_project_id
-VITE_storageBucket=your_storage_bucket
-VITE_messagingSenderId=your_messaging_sender_id
-VITE_appId=your_app_id
-```
+  ```sh
+  VITE_apiKey=your_api_key
+  VITE_authDomain=your_auth_domain
+  VITE_projectId=your_project_id
+  VITE_storageBucket=your_storage_bucket
+  VITE_messagingSenderId=your_messaging_sender_id
+  VITE_appId=your_app_id
+  ```
 
-# Back-End
+- Back-End
 
-```sh
-DB_USER=your_database_user
+  ```sh
+  DB_USER=your_database_user
   DB_PASS=your_database_password
   JWT_SECRET=your_jwt_secret
-```
+  ```
 
 4. Start the development server:
    ```sh
