@@ -13,6 +13,13 @@ export default {
         queryBanner:
           "url(https://i.ibb.co.com/3Cj8zLL/thoughtful-woman-with-laptop-looking-big-question-mark-1150-39362.jpg)",
       },
+      colors: {
+        text: "var(--text)",
+        background: "var(--background)",
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+        accent: "var(--accent)",
+      },
     },
   },
   plugins: [daisyui],
