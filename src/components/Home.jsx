@@ -4,17 +4,19 @@ import Footer from "./Footer";
 
 const Home = () => {
   return (
-    <div className="w-11/12 mx-auto container">
+    <div>
       {/* navbar */}
 
       <Navbar></Navbar>
 
       {/* children */}
-      <Outlet />
-      {/* footer */}
+      <div className="w-11/12 mx-auto container">
+        <Outlet />
+        {/* footer */}
 
-      <div className="mt-8">
-        <Footer></Footer>
+        <div className="mt-8">
+          <Footer></Footer>
+        </div>
       </div>
     </div>
   );
