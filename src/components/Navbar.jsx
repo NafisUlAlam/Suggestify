@@ -15,19 +15,19 @@ const Navbar = () => {
   //navbar links
   const links = (
     <>
-      <button className="btn bg-primary">
+      <button className="btn bg-primary/20 hover:bg-primary">
         <NavLink
           to="/"
-          className={({ isActive }) => (isActive ? "text-text " : "")}
+          className={({ isActive }) => (isActive ? "text-secondary" : "")}
         >
           Home
         </NavLink>
       </button>
 
-      <button className="btn">
+      <button className="btn bg-primary/20 hover:bg-primary">
         <NavLink
           to="/allqueries"
-          className={({ isActive }) => (isActive ? "text-red-400 " : "")}
+          className={({ isActive }) => (isActive ? "text-secondary " : "")}
         >
           Queries
         </NavLink>
@@ -36,36 +36,36 @@ const Navbar = () => {
       {loading ? (
         <span className="loading loading-bars loading-lg"></span>
       ) : !user ? (
-        <button className="btn">
+        <button className="btn bg-primary/20 hover:bg-primary">
           <NavLink
             to="/register"
-            className={({ isActive }) => (isActive ? "text-red-400 " : "")}
+            className={({ isActive }) => (isActive ? "text-secondary " : "")}
           >
             Register
           </NavLink>
         </button>
       ) : (
         <>
-          <button className="btn">
+          <button className="btn bg-primary/20 hover:bg-primary">
             <NavLink
               to="/recommendationsforme"
-              className={({ isActive }) => (isActive ? "text-red-400" : "")}
+              className={({ isActive }) => (isActive ? "text-secondary" : "")}
             >
               Recommended For Me
             </NavLink>
           </button>
-          <button className="btn">
+          <button className="btn bg-primary/20 hover:bg-primary">
             <NavLink
               to="/myqueries"
-              className={({ isActive }) => (isActive ? "text-red-400" : "")}
+              className={({ isActive }) => (isActive ? "text-secondary" : "")}
             >
               My Queries
             </NavLink>
           </button>
-          <button className="btn">
+          <button className="btn bg-primary/20 hover:bg-primary">
             <NavLink
               to="/myrecommendations"
-              className={({ isActive }) => (isActive ? "text-red-400" : "")}
+              className={({ isActive }) => (isActive ? "text-secondary" : "")}
             >
               My Recommendations
             </NavLink>
@@ -94,7 +94,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className=" bg-accent sticky top-0 z-10 backdrop-blur-md">
+    <div className=" bg-accent/20 sticky top-0 z-10 backdrop-blur-md">
       <div className="w-11/12 mx-auto container navbar">
         {" "}
         <div className="navbar-start">
@@ -147,7 +147,10 @@ const Navbar = () => {
                   {user.displayName} <br />
                 </span>
               </div>
-              <button onClick={handleLogOut} className="btn">
+              <button
+                onClick={handleLogOut}
+                className="btn bg-primary/20 hover:bg-primary"
+              >
                 Logout
               </button>
             </div>
@@ -156,7 +159,7 @@ const Navbar = () => {
               <NavLink
                 to="/login"
                 className={({ isActive }) =>
-                  isActive ? "text-red-400 btn" : "btn"
+                  isActive ? "text-text btn" : "btn"
                 }
               >
                 Login

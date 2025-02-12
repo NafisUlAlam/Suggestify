@@ -1,3 +1,14 @@
+function withOpacity(variable) {
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      //console.log(opacityValue);
+      return `rgba(var(${variable}), ${opacityValue})`;
+    }
+
+    return `rgb(var(${variable})`;
+  };
+}
+
 /** @type {import('tailwindcss').Config} */
 import daisyui from "daisyui";
 export default {
@@ -14,11 +25,12 @@ export default {
           "url(https://i.ibb.co.com/3Cj8zLL/thoughtful-woman-with-laptop-looking-big-question-mark-1150-39362.jpg)",
       },
       colors: {
-        text: "var(--text)",
-        background: "var(--background)",
-        primary: "var(--primary)",
-        secondary: "var(--secondary)",
-        accent: "var(--accent)",
+        text: withOpacity("--text"),
+        background: withOpacity("--background"),
+        primary: withOpacity("--primary"),
+
+        secondary: withOpacity("--secondary"),
+        accent: withOpacity("--accent"),
       },
     },
   },
