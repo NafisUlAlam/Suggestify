@@ -87,11 +87,11 @@ const MyRecommendations = () => {
       {loading ? (
         <PageLoading></PageLoading>
       ) : (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto min-h-screen p-4 lg:p-10">
           {recommendations.length > 0 ? (
             <table className="table  w-full">
               <thead>
-                <tr className="text-center text-text">
+                <tr className="text-center text-text text-text/60  bg-primary/10 lg:p-10 rounded-lg border-primary dark:border-primary/10">
                   <th>Inquirer</th>
                   <th>Queried Product</th>
                   <th>Recommended Product</th>
@@ -101,9 +101,12 @@ const MyRecommendations = () => {
                   <th>Actions</th>
                 </tr>
               </thead>
-              <tbody className="text-center">
+              <tbody className="text-center text-text  bg-primary/10 lg:p-10 rounded-lg ">
                 {recommendations.map((rec) => (
-                  <tr key={rec._id}>
+                  <tr
+                    key={rec._id}
+                    className="border-primary dark:border-primary/50"
+                  >
                     <td>
                       <div className="flex flex-col items-center">
                         <img

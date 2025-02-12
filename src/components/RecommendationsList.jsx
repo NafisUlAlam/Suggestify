@@ -16,14 +16,14 @@ const RecommendationsList = ({ recommendations }) => {
         <ul className="space-y-4">
           {recommendations.map((rec, index) => (
             <Slide key={rec._id} direction="right" delay={100 * (index + 1)}>
-              <li className="bg-base-200 p-4 rounded-lg shadow ">
+              <li className="border-primary dark:border-primary/50 border p-4 rounded-lg shadow ">
                 <div className="flex items-center space-x-4">
                   <div className="w-[20%] ">
                     <div className="flex flex-col items-center">
                       <img
                         src={rec.recommendationPosterImg}
                         alt={rec.recommendationPoster}
-                        className="w-16 h-16 rounded-full"
+                        className="w-16 h-16 rounded-full object-cover"
                       />
                       <p className="font-medium ">{rec.recommendationPoster}</p>
                     </div>
@@ -31,7 +31,7 @@ const RecommendationsList = ({ recommendations }) => {
 
                   <div className="w-[70%]">
                     <div className="flex justify-center flex-col items-center space-y-4">
-                      <h4 className="text-lg font-semibold text-primary">
+                      <h4 className="text-lg font-semibold text-text">
                         {rec.recommendationTitle}
                       </h4>
                       <p className="">
@@ -45,7 +45,7 @@ const RecommendationsList = ({ recommendations }) => {
                         <span className="font-medium">Reason:</span>{" "}
                         {rec.recommendationReasons}
                       </p>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs text-text/50">
                         {new Date(rec.timeOfPost).toLocaleString()}
                       </p>
                     </div>

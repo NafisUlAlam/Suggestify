@@ -113,11 +113,11 @@ const Register = () => {
   };
   return (
     <div className="min-h-screen flex justify-center items-center">
-      <div className="card  w-full max-w-lg shrink-0 shadow-2xl p-8">
+      <div className="card  w-full max-w-lg shrink-0 shadow-2xl p-8 border-primary border ">
         <h2 className="font-bold text-xl md:text-2xl lg:text-3xl text-center pt-4">
           Registration Form
         </h2>
-        <hr className="mt-4 text-black" />
+        <hr className="mt-4" />
         <form className="card-body" onSubmit={handleSubmit}>
           <div className="form-control">
             <label className="label">
@@ -127,7 +127,7 @@ const Register = () => {
               type="text"
               placeholder="name"
               name="name"
-              className="input input-bordered bg-blue-50"
+              className="input input-bordered bg-background text-text"
               required
               ref={inputRef}
             />
@@ -140,7 +140,7 @@ const Register = () => {
               type="email"
               placeholder="email"
               name="email"
-              className="input input-bordered bg-blue-50"
+              className="input input-bordered bg-background text-text"
               required
             />
           </div>
@@ -152,7 +152,7 @@ const Register = () => {
               type="text"
               placeholder="Photo"
               name="photo"
-              className="input input-bordered bg-blue-50"
+              className="input input-bordered bg-background text-text"
               required
             />
           </div>
@@ -164,7 +164,7 @@ const Register = () => {
               type={open ? "password" : "text"}
               placeholder="password"
               name="password"
-              className="input input-bordered bg-blue-50"
+              className="input input-bordered bg-background text-text"
               required
             />
             <div
@@ -180,12 +180,14 @@ const Register = () => {
             {error && <p className="text-xs text-red-500">{error}</p>}
           </div>
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Register</button>
+            <button className="btn bg-text text-accent hover:bg-text/80">
+              Register
+            </button>
           </div>
         </form>
         <div className="text-center">
           <button
-            className="btn btn-accent  w-max py-4 bg-blue-50"
+            className="btn  w-max py-4 bg-accent text-text hover:bg-accent/80 border-0"
             onClick={handleClick}
           >
             <FaGoogle></FaGoogle>Sign In With Google
