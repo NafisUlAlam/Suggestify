@@ -56,8 +56,8 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
   };
   const result = formatDistance(new Date(), timeOfPost);
   return (
-    <Slide>
-      <div className="card bg-primary/10  shadow-xl h-full justify-between">
+    <Slide className="grid  grid-rows-subgrid row-span-8 gap-2">
+      <div className="card bg-primary/10  shadow-xl h-full grid grid-rows-subgrid row-span-8 ">
         <figure className="px-10 pt-10 ">
           <img
             src={photo}
@@ -65,7 +65,7 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
             className="rounded-xl h-[200px] object-contain"
           />
         </figure>
-        <div className="space-y-4 px-8">
+        <div className="space-y-4 px-8 grid grid-rows-subgrid row-span-5">
           <div className="flex items-center gap-2">
             <img
               src={originalPosterImg}
@@ -83,10 +83,9 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
             </div>
           </div>
           <h2 className=" text-center font-bold md:text-xl">{queryTitle}</h2>
-          <div className="text-center">
-            <p className="font-light my-4">{itemName}</p>
-            <p className="font-thin badge badge-ghost">{itemBrand}</p>
-          </div>
+
+          <p className="font-light my-4">{itemName}</p>
+          <p className="font-thin badge bg-primary text-text">{itemBrand}</p>
 
           <p className="my-4">{boycottReasons.slice(0, 30)}...</p>
           <p
@@ -99,19 +98,19 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
             Recommendations: {recommendationCount}
           </p>
         </div>
-        <div className="card-actions pb-8 justify-center mt-6">
+        <div className="card-actions pb-8 justify-center mt-6 text-text border-0">
           <Link to={`/detailquery/${_id}`}>
-            <button className="btn bg-accent hover:bg-accent/20">
+            <button className="btn bg-accent hover:bg-accent/20 text-text border-0">
               Details
             </button>
           </Link>
           <Link to={`/updatequery/${_id}`}>
-            <button className="btn bg-primary hover:bg-primary/20">
+            <button className="btn bg-primary hover:bg-primary/20 text-text border-0">
               Update
             </button>
           </Link>
           <button
-            className="btn bg-red-400 hover:bg-red-200"
+            className="btn bg-red-400 hover:bg-red-200 text-text border-0"
             onClick={() => handleDelete(_id)}
           >
             Delete

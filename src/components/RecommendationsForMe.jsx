@@ -36,7 +36,7 @@ const RecommendationsForMe = () => {
   //console.log(recommendations);
 
   return (
-    <div>
+    <div className="">
       <Fade>
         <TitleAndSubTitle
           title={`Recommendations For Your Queries`}
@@ -47,10 +47,10 @@ const RecommendationsForMe = () => {
       {loading ? (
         <PageLoading></PageLoading>
       ) : recommendations.length > 0 ? (
-        <div className="overflow-x-auto min-h-screen">
-          <table className="table table-zebra w-full">
+        <div className="overflow-x-auto min-h-screen p-4 lg:p-10">
+          <table className="table w-full ">
             <thead>
-              <tr className="text-center">
+              <tr className="text-center text-text/60  bg-primary/10 lg:p-10 rounded-lg border-primary">
                 <th>Query Title</th>
                 <th>Queried Item</th>
                 <th>Recommended Product</th>
@@ -60,9 +60,9 @@ const RecommendationsForMe = () => {
                 <th>Recommended On</th>
               </tr>
             </thead>
-            <tbody className="text-center">
+            <tbody className="text-center text-text  bg-primary/10 lg:p-10 rounded-lg ">
               {recommendations.map((rec) => (
-                <tr key={rec._id}>
+                <tr key={rec._id} className="border-primary">
                   <td>{rec.queryTitle}</td>
                   <td>
                     <div className="flex flex-col items-center">

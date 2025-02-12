@@ -89,9 +89,9 @@ const MyRecommendations = () => {
       ) : (
         <div className="overflow-x-auto">
           {recommendations.length > 0 ? (
-            <table className="table table-zebra w-full">
+            <table className="table  w-full">
               <thead>
-                <tr className="text-center">
+                <tr className="text-center text-text">
                   <th>Inquirer</th>
                   <th>Queried Product</th>
                   <th>Recommended Product</th>
@@ -139,7 +139,7 @@ const MyRecommendations = () => {
                     <td>{new Date(rec.timeOfPost).toLocaleDateString()}</td>
                     <td>
                       <button
-                        className="btn bg-red-200 hover:bg-red-300"
+                        className="btn bg-red-500  text-white/90 hover:bg-red-600 border-0 "
                         onClick={() =>
                           handleDeleteRecommendation(rec._id, rec.query_id)
                         }

@@ -65,19 +65,19 @@ const AllQueries = () => {
         />
         <div className="flex gap-2 ml-4">
           <button
-            className="btn bg-primary hover:bg-primary/20 text-text"
+            className="btn bg-primary hover:bg-primary/20 text-text border-0"
             onClick={() => handleGridLayout(1)}
           >
             1 Column
           </button>
           <button
-            className="btn  bg-primary hover:bg-primary/20 text-text"
+            className="btn  bg-primary hover:bg-primary/20 text-text border-0"
             onClick={() => handleGridLayout(2)}
           >
             2 Columns
           </button>
           <button
-            className="btn  bg-primary hover:bg-primary/20 text-text"
+            className="btn  bg-primary hover:bg-primary/20 text-text border-0"
             onClick={() => handleGridLayout(3)}
           >
             3 Columns

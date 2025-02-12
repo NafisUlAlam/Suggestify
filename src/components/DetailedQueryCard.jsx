@@ -19,7 +19,7 @@ const DetailedQueryCard = ({ query }) => {
     "MMMM dd, yyyy 'at' h:mmaaa"
   );
   return (
-    <div className="card bg-base-100 shadow-md rounded-lg px-4 py-8 mb-6  mx-auto lg:w-[50%]">
+    <div className="card border-2 border-primary  shadow-md rounded-lg px-4 py-8 mb-6  mx-auto lg:w-[50%]">
       {/* Header: Poster Info and Time */}
       <div className="flex items-center mb-4">
         {/* User Image */}
@@ -30,14 +30,12 @@ const DetailedQueryCard = ({ query }) => {
         />
         {/* Poster Info */}
         <div className="flex-grow">
-          <h3 className="text-lg font-semibold text-primary">
-            {originalPoster}
-          </h3>
-          <p className="text-sm text-primary/80">
+          <h3 className="text-lg font-semibold text-text">{originalPoster}</h3>
+          <p className="text-sm text-text">
             {originalPosterEmail.split("@")[0]}
           </p>
           {/* Time of Post */}
-          <p className="text-xs text-gray-400">{relativeTime}</p>
+          <p className="text-xs text-text/60">{relativeTime}</p>
         </div>
       </div>
 
@@ -51,7 +49,9 @@ const DetailedQueryCard = ({ query }) => {
       </div>
       <div className="flex gap-4 items-center my-2">
         <h2 className="text-md font-thin ">{itemName}</h2>
-        <p className="text-sm font-thin badge badge-ghost">{itemBrand}</p>
+        <p className="text-sm font-thin badge bg-primary text-text border-0">
+          {itemBrand}
+        </p>
       </div>
 
       {/* Query Title */}
@@ -62,13 +62,13 @@ const DetailedQueryCard = ({ query }) => {
       {/* Boycott Reasons */}
       {boycottReasons && (
         <div className="mb-4">
-          <p className="text-base text-base-content">{boycottReasons}</p>
+          <p className="text-base text-text">{boycottReasons}</p>
         </div>
       )}
 
       {/* Recommendation and Actions */}
       <div className="flex items-center justify-between">
-        <p className="text-sm  badge badge-accent">
+        <p className="text-sm  badge bg-primary/50 border-0 text-text">
           {recommendationCount} Recommendations
         </p>
       </div>

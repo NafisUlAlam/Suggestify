@@ -96,7 +96,7 @@ const Login = () => {
               type="email"
               placeholder="email"
               name="email"
-              className="input input-bordered bg-blue-50"
+              className="input input-bordered bg-background text-text"
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
@@ -112,7 +112,7 @@ const Login = () => {
               type="password"
               placeholder="password"
               name="password"
-              className="input input-bordered bg-blue-50"
+              className="input input-bordered bg-background text-text"
               required
             />
             <label className="label">
@@ -126,12 +126,17 @@ const Login = () => {
             </label>
           </div>
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Log In</button>
+            <button className="btn bg-primary hover:bg-primary/20 text-text">
+              Log In
+            </button>
           </div>
         </form>
 
         <div className="text-center">
-          <button className="btn  w-max py-4 btn-accent" onClick={handleClick}>
+          <button
+            className="btn  w-max py-4 bg-accent text-text hover:bg-accent/20"
+            onClick={handleClick}
+          >
             <FaGoogle></FaGoogle>Sign In With Google
           </button>
         </div>
@@ -141,7 +146,7 @@ const Login = () => {
             to="/register"
             state={location?.state}
             replace
-            className="font-bold underline"
+            className="font-bold underline hover:text-blue-500"
           >
             Register
           </Link>{" "}

@@ -87,7 +87,7 @@ const RecommendationForm = ({
       .catch((err) => toast.error(err, { position: "top-center" }));
   };
   return (
-    <div className="card  w-full shrink-0 border-2 md:p-8 lg:w-[50%] mx-auto">
+    <div className="card  w-full shrink-0 border-2 md:p-8 lg:w-[50%] mx-auto border-primary">
       <h2 className="font-bold text-xl md:text-2xl lg:text-3xl text-center pt-4">
         Recommendation Form
       </h2>
@@ -104,7 +104,7 @@ const RecommendationForm = ({
             type="text"
             placeholder="recommended item name"
             name="recommendationItemname"
-            className="input input-bordered bg-blue-50"
+            className="input input-bordered bg-background text-text"
             required
           />
         </div>
@@ -117,7 +117,7 @@ const RecommendationForm = ({
             type="text"
             placeholder="recommended brand"
             name="recommendationItembrand"
-            className="input input-bordered bg-blue-50"
+            className="input input-bordered bg-background text-text"
             required
           />
         </div>
@@ -130,7 +130,7 @@ const RecommendationForm = ({
             type="text"
             placeholder="item photo URL"
             name="recommendationItemPhoto"
-            className="input input-bordered bg-blue-50"
+            className="input input-bordered bg-background text-text"
             required
           />
         </div>
@@ -143,7 +143,7 @@ const RecommendationForm = ({
             type="text"
             placeholder="recommendation title"
             name="recommendationTitle"
-            className="input input-bordered bg-blue-50"
+            className="input input-bordered bg-background text-text"
             required
           />
         </div>
@@ -156,7 +156,7 @@ const RecommendationForm = ({
             placeholder="tell us why you recommend the product"
             type="text"
             name="recommendationReasons"
-            className="textarea textarea-bordered bg-blue-50 p-4"
+            className="textarea textarea-bordered bg-background text-text p-4"
             rows={10}
             required
           />
@@ -168,7 +168,7 @@ const RecommendationForm = ({
           <input
             type="text"
             name="user"
-            className="input input-bordered bg-blue-50"
+            className="input input-bordered bg-background "
             value={user.displayName}
             required
             readOnly
@@ -176,18 +176,20 @@ const RecommendationForm = ({
         </div>
         <div className="form-control relative">
           <label className="label">
-            <span className="label-text">User Email</span>
+            <span className="label-text ">User Email</span>
           </label>
           <input
             type="text"
             name="email"
-            className="input input-bordered bg-blue-50"
+            className="input input-bordered bg-background text-text"
             value={user.email}
             readOnly
             required
           />
         </div>
-        <button className="btn btn-accent md:col-span-2 my-8">Recommend</button>
+        <button className="btn bg-accent border-0 text-text md:col-span-2 my-8">
+          Recommend
+        </button>
       </form>
     </div>
   );

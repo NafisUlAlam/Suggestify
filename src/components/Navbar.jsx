@@ -15,7 +15,7 @@ const Navbar = () => {
   //navbar links
   const links = (
     <>
-      <button className="btn bg-primary/20 hover:bg-primary text-text">
+      <button className="btn bg-primary/20 hover:bg-primary text-text border-0">
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? "text-secondary" : "")}
@@ -24,7 +24,7 @@ const Navbar = () => {
         </NavLink>
       </button>
 
-      <button className="btn bg-primary/20 hover:bg-primary text-text">
+      <button className="btn bg-primary/20 hover:bg-primary text-text border-0">
         <NavLink
           to="/allqueries"
           className={({ isActive }) => (isActive ? "text-secondary " : "")}
@@ -36,7 +36,7 @@ const Navbar = () => {
       {loading ? (
         <span className="loading loading-bars loading-lg"></span>
       ) : !user ? (
-        <button className="btn bg-primary/20 hover:bg-primary text-text">
+        <button className="btn bg-primary/20 hover:bg-primary text-text border-0">
           <NavLink
             to="/register"
             className={({ isActive }) => (isActive ? " " : "")}
@@ -46,7 +46,7 @@ const Navbar = () => {
         </button>
       ) : (
         <>
-          <button className="btn bg-primary/20 hover:bg-primary text-text">
+          <button className="btn bg-primary/20 hover:bg-primary text-text border-0">
             <NavLink
               to="/recommendationsforme"
               className={({ isActive }) => (isActive ? "" : "")}
@@ -54,7 +54,7 @@ const Navbar = () => {
               Recommended For Me
             </NavLink>
           </button>
-          <button className="btn bg-primary/20 hover:bg-primary text-text">
+          <button className="btn bg-primary/20 hover:bg-primary text-text border-0">
             <NavLink
               to="/myqueries"
               className={({ isActive }) => (isActive ? "" : "")}
@@ -62,7 +62,7 @@ const Navbar = () => {
               My Queries
             </NavLink>
           </button>
-          <button className="btn bg-primary/20 hover:bg-primary text-text">
+          <button className="btn bg-primary/20 hover:bg-primary text-text border-0">
             <NavLink
               to="/myrecommendations"
               className={({ isActive }) => (isActive ? "" : "")}
@@ -149,7 +149,7 @@ const Navbar = () => {
               </div>
               <button
                 onClick={handleLogOut}
-                className="btn bg-primary/20 hover:bg-primary"
+                className="btn bg-primary/20 hover:bg-primary text-text border-0"
               >
                 Logout
               </button>
@@ -158,7 +158,9 @@ const Navbar = () => {
             <div className="flex items-center gap-2">
               <NavLink
                 to="/login"
-                className={"btn bg-primary/20 hover:bg-primary text-text"}
+                className={
+                  "btn bg-primary/20 hover:bg-primary text-text border-0"
+                }
               >
                 Login
               </NavLink>

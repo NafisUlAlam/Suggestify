@@ -54,7 +54,7 @@ const QueryCard = ({ query }) => {
             Recommendations: {recommendationCount}
           </span>
           <Link to={`/detailquery/${_id}`}>
-            <button className="btn bg-primary hover:bg-primary/20 btn-sm text-text">
+            <button className="btn bg-primary hover:bg-primary/20 btn-sm text-text border-0">
               Recommend
             </button>
           </Link>
