@@ -23,7 +23,7 @@ const QueryCard = ({ query }) => {
           <img
             src={originalPosterImg}
             alt="Poster"
-            className="w-12 h-12 rounded-full border mr-4"
+            className="w-12 h-12 rounded-full border mr-4 object-cover"
           />
           <div>
             <h2 className="font-semibold text-lg ">{originalPoster}</h2>
