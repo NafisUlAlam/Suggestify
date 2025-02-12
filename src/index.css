@@ -13,9 +13,23 @@
 
   .dark {
     --text: 245, 253, 237;
-    --background: 25, 25, 25;
+    --background: 25, 39, 42;
     --primary: 114, 207, 32;
     --secondary: 17, 19, 115;
     --accent: 27, 177, 97;
   }
+  /* :root {
+    --text: 2, 11, 0;
+    --background: 242, 255, 239;
+    --primary: 62, 255, 7;
+    --secondary: 110, 255, 238;
+    --accent: 73, 212, 255;
+  }
+  .dark {
+    --text: 247, 255, 245;
+    --background: 3, 15, 0;
+    --primary: 54, 250, 0;
+    --secondary: 0, 143, 126;
+    --accent: 0, 141, 184;
+  } */
 }
