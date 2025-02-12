@@ -12,10 +12,13 @@
   }
 
   .dark {
-    --text: 9, 16, 2;
-    --background: 250, 254, 246;
-    --primary: 130, 223, 46;
-    --secondary: 141, 143, 238;
-    --accent: 78, 228, 148;
+    --text: 245, 253, 237;
+    --background: 5, 9, 1;
+    --primary: 114, 207, 32;
+    --secondary: 17, 19, 115;
+    --accent: 27, 177, 97;
+  }
+  body {
+    @apply bg-background;
   }
 }

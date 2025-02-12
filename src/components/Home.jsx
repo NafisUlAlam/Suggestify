@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-background text-text">
       {/* navbar */}
 
       <Navbar></Navbar>

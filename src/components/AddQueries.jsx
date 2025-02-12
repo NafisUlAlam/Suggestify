@@ -162,7 +162,7 @@ const AddQueries = () => {
               required
             />
           </div>
-          <button className="btn btn-accent md:col-span-2 my-8">
+          <button className="btn bg-accent hover:bg-accent/20 md:col-span-2 my-8">
             Add Query
           </button>
         </form>

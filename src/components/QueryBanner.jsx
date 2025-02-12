@@ -6,7 +6,7 @@ const QueryBanner = () => {
     <div>
       <div className="hero min-h-screen bg-queryBanner">
         <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-center text-gray-200">
+        <div className="hero-content text-center text-text/90">
           <div className="">
             <h1 className="mb-5 text-2xl md:text-5xl font-bold">
               Unlock Smarter Product Decisions
@@ -17,7 +17,7 @@ const QueryBanner = () => {
               and real experiences to guide you towards the best choices.
             </p>
             <button
-              className="btn btn-primary"
+              className="btn bg-primary hover:bg-primary/20"
               onClick={() => {
                 navigate("/addqueries");
               }}

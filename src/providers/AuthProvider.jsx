@@ -88,14 +88,29 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   //theme
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  // const [theme, setTheme] = useState(
+  //   localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  // );
+  // useEffect(() => {
+  //   localStorage.setItem("theme", theme);
+  //   const localTheme = localStorage.getItem("theme");
+  //   document.querySelector("html").setAttribute("data-theme", localTheme);
+  //   //document.querySelector("html").classList.add(localTheme);
+  // }, [theme]);
+
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("theme") === "dark"
   );
+
   useEffect(() => {
-    localStorage.setItem("theme", theme);
-    const localTheme = localStorage.getItem("theme");
-    document.querySelector("html").setAttribute("data-theme", localTheme);
-  }, [theme]);
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
   const authInfo = {
     signUp,
     signIn,
@@ -106,8 +121,10 @@ const AuthProvider = ({ children }) => {
     setLoading,
     googleSignIn,
     updateUserProfile,
-    theme,
-    setTheme,
+    //theme,
+    //setTheme,
+    darkMode,
+    setDarkMode,
   };
   //console.log(typeof children);
   return (

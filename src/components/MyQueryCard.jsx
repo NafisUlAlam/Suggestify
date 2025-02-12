@@ -57,7 +57,7 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
   const result = formatDistance(new Date(), timeOfPost);
   return (
     <Slide>
-      <div className="card bg-base-100  shadow-xl h-full justify-between">
+      <div className="card bg-primary/10  shadow-xl h-full justify-between">
         <figure className="px-10 pt-10 ">
           <img
             src={photo}
@@ -101,12 +101,19 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
         </div>
         <div className="card-actions pb-8 justify-center mt-6">
           <Link to={`/detailquery/${_id}`}>
-            <button className="btn btn-primary">Details</button>
+            <button className="btn bg-accent hover:bg-accent/20">
+              Details
+            </button>
           </Link>
           <Link to={`/updatequery/${_id}`}>
-            <button className="btn btn-primary">Update</button>
+            <button className="btn bg-primary hover:bg-primary/20">
+              Update
+            </button>
           </Link>
-          <button className="btn btn-primary" onClick={() => handleDelete(_id)}>
+          <button
+            className="btn bg-red-400 hover:bg-red-200"
+            onClick={() => handleDelete(_id)}
+          >
             Delete
           </button>
         </div>

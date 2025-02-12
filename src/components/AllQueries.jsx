@@ -61,23 +61,23 @@ const AllQueries = () => {
           value={searchText}
           onChange={handleSearch}
           placeholder="Search by product name..."
-          className="input input-bordered w-full max-w-md"
+          className="input input-bordered w-full max-w-md bg-primary/20 text-text"
         />
         <div className="flex gap-2 ml-4">
           <button
-            className="btn btn-outline"
+            className="btn bg-primary hover:bg-primary/20 text-text"
             onClick={() => handleGridLayout(1)}
           >
             1 Column
           </button>
           <button
-            className="btn btn-outline"
+            className="btn  bg-primary hover:bg-primary/20 text-text"
             onClick={() => handleGridLayout(2)}
           >
             2 Columns
           </button>
           <button
-            className="btn btn-outline"
+            className="btn  bg-primary hover:bg-primary/20 text-text"
             onClick={() => handleGridLayout(3)}
           >
             3 Columns

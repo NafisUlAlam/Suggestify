@@ -139,7 +139,7 @@ const MyRecommendations = () => {
                     <td>{new Date(rec.timeOfPost).toLocaleDateString()}</td>
                     <td>
                       <button
-                        className="btn btn-accent"
+                        className="btn bg-red-200 hover:bg-red-300"
                         onClick={() =>
                           handleDeleteRecommendation(rec._id, rec.query_id)
                         }

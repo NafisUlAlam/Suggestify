@@ -25,7 +25,8 @@ const ShowLatestCards = () => {
   return (
     <div>
       <h2 className="font-bold text-xl md:text-2xl lg:text-3xl text-center my-4">
-        Discover the Latest Product Queries
+        Discover the Latest{" "}
+        <span className="text-primary">Product Queries</span>
       </h2>
       <p className="font-extralight text-base md:text-xl text-center my-4">
         Stay updated with the newest questions from our community seeking

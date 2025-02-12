@@ -2,11 +2,12 @@ import { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 
 const Theme = () => {
-  const { setTheme, theme } = useContext(AuthContext);
-  const handleToggle = (e) => {
+  const { darkMode, setDarkMode } = useContext(AuthContext);
+  const handleToggle = () => {
     //console.log(e.target.checked);
-    if (e.target.checked) setTheme("dark");
-    else setTheme("light");
+    //if (e.target.checked) setTheme("dark");
+    //else setTheme("light");
+    setDarkMode(!darkMode);
   };
   return (
     <label className="swap swap-rotate">
@@ -14,7 +15,8 @@ const Theme = () => {
       <input
         type="checkbox"
         onChange={handleToggle}
-        checked={theme === "light" ? false : true}
+        //checked={theme === "light" ? false : true}
+        checked={darkMode ? true : false}
       />
 
       {/* sun icon */}
