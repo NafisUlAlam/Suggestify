@@ -18,7 +18,9 @@ const Navbar = () => {
       <button className="btn bg-primary/20 hover:bg-primary text-text border-0">
         <NavLink
           to="/"
-          className={({ isActive }) => (isActive ? "text-secondary" : "")}
+          className={({ isActive }) =>
+            isActive ? "text-orange-600 dark:text-orange-500" : ""
+          }
         >
           Home
         </NavLink>
@@ -27,7 +29,9 @@ const Navbar = () => {
       <button className="btn bg-primary/20 hover:bg-primary text-text border-0">
         <NavLink
           to="/allqueries"
-          className={({ isActive }) => (isActive ? "text-secondary " : "")}
+          className={({ isActive }) =>
+            isActive ? "text-orange-600 dark:text-orange-500" : ""
+          }
         >
           Queries
         </NavLink>
@@ -39,7 +43,9 @@ const Navbar = () => {
         <button className="btn bg-primary/20 hover:bg-primary text-text border-0">
           <NavLink
             to="/register"
-            className={({ isActive }) => (isActive ? " " : "")}
+            className={({ isActive }) =>
+              isActive ? "text-orange-600 dark:text-orange-500 " : ""
+            }
           >
             Register
           </NavLink>
@@ -49,7 +55,9 @@ const Navbar = () => {
           <button className="btn bg-primary/20 hover:bg-primary text-text border-0">
             <NavLink
               to="/recommendationsforme"
-              className={({ isActive }) => (isActive ? "" : "")}
+              className={({ isActive }) =>
+                isActive ? "text-orange-600 dark:text-orange-500" : ""
+              }
             >
               Recommended For Me
             </NavLink>
@@ -57,7 +65,9 @@ const Navbar = () => {
           <button className="btn bg-primary/20 hover:bg-primary text-text border-0">
             <NavLink
               to="/myqueries"
-              className={({ isActive }) => (isActive ? "" : "")}
+              className={({ isActive }) =>
+                isActive ? "text-orange-600 dark:text-orange-500" : ""
+              }
             >
               My Queries
             </NavLink>
@@ -65,7 +75,9 @@ const Navbar = () => {
           <button className="btn bg-primary/20 hover:bg-primary text-text border-0">
             <NavLink
               to="/myrecommendations"
-              className={({ isActive }) => (isActive ? "" : "")}
+              className={({ isActive }) =>
+                isActive ? "text-orange-600 dark:text-orange-500" : ""
+              }
             >
               My Recommendations
             </NavLink>
