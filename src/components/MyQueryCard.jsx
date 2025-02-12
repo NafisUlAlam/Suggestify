@@ -85,7 +85,9 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
           <h2 className=" text-center font-bold md:text-xl">{queryTitle}</h2>
 
           <p className="font-light my-4">{itemName}</p>
-          <p className="font-thin badge bg-primary text-text">{itemBrand}</p>
+          <p className="font-thin badge bg-primary text-text border-0">
+            {itemBrand}
+          </p>
 
           <p className="my-4">{boycottReasons.slice(0, 30)}...</p>
           <p

@@ -18,7 +18,7 @@ const QueryCard = ({ query }) => {
   const result = formatDistance(new Date(), timeOfPost);
   return (
     <Fade>
-      <div className="card h-full bg-primary/10 shadow-md border justify-between">
+      <div className="card h-full bg-primary/10 shadow-md border justify-between border-primary/20">
         <div className="flex items-center p-4">
           <img
             src={originalPosterImg}
@@ -49,8 +49,8 @@ const QueryCard = ({ query }) => {
           </p>
         </div>
 
-        <div className="card-actions justify-between items-center p-4 border-t">
-          <span className="badge bg-primary/20 text-text">
+        <div className="card-actions justify-between items-center p-4 border-t border-t-primary/50">
+          <span className="badge bg-primary/20 text-text border-0">
             Recommendations: {recommendationCount}
           </span>
           <Link to={`/detailquery/${_id}`}>
