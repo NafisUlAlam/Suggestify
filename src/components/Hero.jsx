@@ -6,12 +6,14 @@ const Hero = ({ src, title, subtitle }) => {
       <img src={src} className="w-full object-cover opacity-40 " alt="" />
       <div
         className="absolute inset-0 grid place-content-center text-white/80 
-      space-y-4 bg-black/30"
+       bg-black/40"
       >
-        <h2 className="font-bold  md:text-3xl lg:text-5xl text-center">
-          {title}
-        </h2>
-        <p className="font-semibold  md:text-2xl text-center">{subtitle}</p>
+        <div className="p-8 space-y-4">
+          <h2 className="font-bold text-xl  md:text-3xl lg:text-5xl text-center">
+            {title}
+          </h2>
+          <p className="font-semibold md:text-xl text-center">{subtitle}</p>
+        </div>
       </div>
     </div>
   );

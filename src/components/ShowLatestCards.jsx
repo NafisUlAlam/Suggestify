@@ -23,7 +23,7 @@ const ShowLatestCards = () => {
       });
   }, []);
   return (
-    <div>
+    <div className="my-12">
       <h2 className="font-bold text-xl md:text-2xl lg:text-3xl text-center my-4">
         Discover the Latest{" "}
         <span className="text-primary">Product Queries</span>

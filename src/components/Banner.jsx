@@ -23,7 +23,7 @@ const Banner = () => {
       pagination={{ clickable: true }}
       spaceBetween={40}
       slidesPerView={1}
-      className="bg-banner5 bg-cover bg-no-repeat bg-center min-h-screen grid place-content-center"
+      className="bg-banner5 bg-cover bg-no-repeat bg-center grid place-content-center mb-12"
     >
       <SwiperSlide>
         <Hero
