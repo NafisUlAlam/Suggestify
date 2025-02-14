@@ -1,0 +1,6 @@
+<div className="space-y-4">
+  <h2 className="font-bold text-xl md:text-3xl lg:text-5xl text-center">
+    {title}
+  </h2>
+  <p className="font-semibold md:text-xl text-center">{subtitle}</p>
+</div>

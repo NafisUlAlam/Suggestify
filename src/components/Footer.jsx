@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import {
   FaFacebook,
@@ -6,9 +7,19 @@ import {
   FaLinkedin,
   FaTwitter,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+
+import Modal from "./Modal";
 
 const Footer = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = () => {
+    setIsOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+    document.body.style.overflow = "auto";
+  };
   return (
     <Fade>
       <div className="bg-base-200  p-10 bg-banner bg-no-repeat bg-center bg-cover text-white">
@@ -45,7 +56,9 @@ const Footer = () => {
           <nav>
             <h6 className="footer-title">Legal</h6>
             <a className="link link-hover">Terms of use</a>
-            <a className="link link-hover">Privacy policy</a>
+            <a className="link link-hover" onClick={openModal}>
+              Privacy policy
+            </a>
             <a className="link link-hover">Cookie policy</a>
           </nav>
         </footer>
@@ -90,6 +103,9 @@ const Footer = () => {
           Suggestify
         </p>
       </div>
+      <Modal isOpen={isOpen} onClose={closeModal}>
+        modal
+      </Modal>
     </Fade>
   );
 };
